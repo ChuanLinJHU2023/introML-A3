@@ -36,8 +36,8 @@ class Linear(Layer):
 
     def backward(self, output_gradient):
         assert isinstance(output_gradient,np.ndarray)
-        assert output_gradient.shape==(self.output_size,1)
-        input_gradient=self.W.T @ output_gradient
+        assert output_gradient.shape==(1,self.output_size)
+        input_gradient=output_gradient@self.W
         self.W_grad=output_gradient@self.input
         self.b_grad=output_gradient
         return input_gradient
