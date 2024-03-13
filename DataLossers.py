@@ -1,6 +1,5 @@
-import numpy as np
 from DataLayers import *
-import pandas as pd
+
 
 
 class Loss:
@@ -13,7 +12,7 @@ class Loss:
         assert self.input_size is None
         self.input_size = input_size
 
-    def value(self, predicted, groundtruth):
+    def value(self, predicted, groundtruth,need_reshape=True):
         raise NotImplementedError
 
     def grad(self):
@@ -26,6 +25,7 @@ class Loss:
         predicted = np.array(predicted).reshape(-1, 1)
         groundtruth = np.array(groundtruth).reshape(-1, 1)
         return predicted,groundtruth
+
 
 class SSE(Loss):
     def value(self, predicted, groundtruth, need_reshape=True):

@@ -10,42 +10,40 @@ class DNN_Model:
         self.opt = opt
         self.loss = loss
         self.label_feature = label_feature
-        self.label_index = None
+        self.label_feature_index = None
 
     def fit(self, df_train: pd.DataFrame, batch_size, n_epochs):
         arr_train = np.array(df_train)
-        self.label_index = list(df_train.columns).index(self.label_feature)
+        self.label_feature_index = list(df_train.columns).index(self.label_feature)
         datapoint_number = arr_train.shape[0]
-        feature_number = arr_train.shape[1] - 1
-        xs = np.delete(arr_train, self.label_index, axis=1)
-        ys = arr_train[:, self.label_index]
+        xs = np.delete(arr_train, self.label_feature_index, axis=1)
+        ys = arr_train[:, self.label_feature_index]
         for epoch_i in range(n_epochs):
-            for batch_i in range(arr_train.shape[0] // batch_size):
+            epoch_loss=0
+            for batch_i in range(datapoint_number // batch_size):
                 start = batch_i * batch_size
                 end = min((batch_i + 1) * batch_size, datapoint_number)
-                epoch_loss = 0
                 for dp_i in range(start, end):
-                    x = xs[dp_i].reshape((feature_number, 1))
+                    x = xs[dp_i].reshape((-1, 1))
                     y = ys[dp_i]
                     predicted = self.seq.forward(x)
                     ground_truth = y
-                    loss = self.loss.value(predicted, ground_truth)
-                    grad = self.loss.grad(predicted, ground_truth)
-                    self.seq.backward(grad)
+                    loss = self.loss.value(predicted, ground_truth, need_reshape=True)
                     epoch_loss += loss
+                    grad = self.loss.grad()
+                    self.seq.backward(grad)
                 self.opt.step(self.seq)
                 print("Epoch {}: Loss {}".format(epoch_i, epoch_loss))
 
     def predict(self, df_test: pd.DataFrame):
         arr_test = np.array(df_test)
         datapoint_number = arr_test.shape[0]
-        feature_number = arr_test.shape[1] - 1
-        xs = np.delete(arr_test, self.label_index, axis=1)
+        xs = np.delete(arr_test, self.label_feature_index, axis=1)
         ys = np.zeros(datapoint_number)
         start = 0
         end = datapoint_number
         for dp_i in range(start, end):
-            x = xs[dp_i].reshape((feature_number, 1))
-            predited = self.seq.forward(x)
-            ys[dp_i] = predited
+            x = xs[dp_i].reshape((-1, 1))
+            predicted = self.seq.forward(x)
+            ys[dp_i] = predicted
         return ys
