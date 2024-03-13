@@ -45,3 +45,7 @@ class GradientDecsent(Optimizer):
 
 
 
+
+
+
+

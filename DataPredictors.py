@@ -27,8 +27,8 @@ class Linear(Layer):
         super().__init__(input_size, output_size)
         W=np.random.randn(output_size,input_size) if W is None else W
         b=np.random.randn(output_size,1) if b is None else b
-        W_grad=0
-        b_grad=0
+        W_grad=np.zeros((output_size,input_size))
+        b_grad=np.zeros((output_size,1))
         self.params=[W,b]
         self.grads=[W_grad,b_grad]
 
@@ -53,8 +53,7 @@ class Linear(Layer):
 
     def param(self, parameter_name=None):
         assert parameter_name
-        W = self.params[0]
-        b = self.params[1]
+        W, b = self.params
         if parameter_name=="W":
             return W
         if parameter_name=="b":
@@ -63,8 +62,7 @@ class Linear(Layer):
 
     def grad(self, parameter_name=None):
         assert parameter_name
-        W_grad=self.grads[0]
-        b_grad=self.grads[1]
+        W_grad, b_grad=self.grads
         if parameter_name=="W":
             return W_grad
         if parameter_name=="b":
