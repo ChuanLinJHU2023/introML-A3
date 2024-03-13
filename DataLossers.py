@@ -6,44 +6,53 @@ import pandas as pd
 class Loss:
     def __init__(self, input_size=None):
         self.input_size = input_size
+        self.predicted = None
+        self.groundtruth = None
 
     def init_input_size(self, input_size):
         assert self.input_size is None
         self.input_size = input_size
 
-    def value(self, predicted, ground_truth):
+    def value(self, predicted, groundtruth):
         raise NotImplementedError
 
-    def grad(self, predicted, ground_truth):
+    def grad(self):
         raise NotImplementedError
 
-    def input_check(self, predicted, ground_truth):
-        assert predicted.shape == (self.input_size, 1)
-        assert isinstance(ground_truth, float) or isinstance(ground_truth, int)
+    def input_check(self, predicted, groundtruth):
+        assert predicted.shape == groundtruth.shape == (self.input_size, 1)
 
+    def reshape(self,predicted,groundtruth):
+        predicted = np.array(predicted).reshape(-1, 1)
+        groundtruth = np.array(groundtruth).reshape(-1, 1)
+        return predicted,groundtruth
 
 class SSE(Loss):
-    def value(self, predicted, ground_truth):
-        self.input_check(predicted, ground_truth)
-        predicted = predicted[0][0]
-        value = np.sum(predicted - ground_truth)
+    def value(self, predicted, groundtruth, need_reshape=True):
+        if need_reshape:
+            predicted, groundtruth= self.reshape(predicted,groundtruth)
+        self.input_check(predicted, groundtruth)
+        self.predicted=predicted
+        self.groundtruth=groundtruth
+        value = np.sum(np.square(predicted - groundtruth))
         return value
 
-    def grad(self, predicted, ground_truth):
-        self.input_check(predicted, ground_truth)
-        predicted = predicted[0][0]
-        grad = 2 * (predicted - ground_truth)
-        grad = np.array([[grad]])
-        assert grad.shape == (1, self.input_size)
+    def grad(self):
+        grad = 2 * (self.predicted - self.groundtruth)
         return grad
 
 
 class SoftmaxCrossEntropy(Loss):
-    def value(self, predicted, ground_truth):
-        self.input_check(predicted, ground_truth)
-        probabilities_pred = self.softmax(predicted)
-        probabilities_true = self.one_hot_encode(ground_truth)
-        return self.cross_entropy(probabilities_pred, probabilities_true)
+    def value(self, predicted, groundtruth, need_reshape=True, need_encode=False):
+        if need_encode:
+            groundtruth = self.one_hot_encode(groundtruth)
+        if need_reshape:
+            predicted, groundtruth = self.reshape(predicted, groundtruth)
+        self.input_check(predicted, groundtruth)
+        self.predicted=predicted
+        self.groundtruth=groundtruth
+        predicted = self.softmax(predicted)
+        return self.cross_entropy(predicted,groundtruth)
 
     def softmax(self, predicted):
         exp = np.exp(predicted)
@@ -52,7 +61,7 @@ class SoftmaxCrossEntropy(Loss):
         return probabilities
 
     def cross_entropy(self, probabilities_pred, probabilities_true):
-        assert probabilities_pred.shape==probabilities_true.shape==(self.input_size,1)
+        assert probabilities_pred.shape == probabilities_true.shape == (self.input_size, 1)
         return np.sum(np.log2(probabilities_pred + 1e-30) * probabilities_true)
 
     def one_hot_encode(self, class_k):
@@ -62,11 +71,6 @@ class SoftmaxCrossEntropy(Loss):
         probabilities[class_k][0] = 1
         return probabilities
 
-    def grad(self, predicted, ground_truth):
-        self.input_check(predicted, ground_truth)
-        probabilities_pred = self.softmax(predicted)
-        probabilities_true = self.one_hot_encode(ground_truth)
-        grad = probabilities_pred - probabilities_true
-        grad = grad.reshape((1,-1))
-        assert grad.shape == (1, self.input_size)
+    def grad(self):
+        grad=self.softmax(self.predicted) - self.groundtruth
         return grad
