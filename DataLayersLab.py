@@ -10,7 +10,7 @@ from DataLayers import *
 # print(linear_layer.param("W"))
 # print(linear_layer.forward(input))
 # print("\n\n")
-# output_gradient=np.arange(output_size).reshape((1,output_size))
+# output_gradient=np.arange(output_size).reshape((-1,1))
 # print(output_gradient)
 # print(linear_layer.backward(output_gradient))
 # print(linear_layer.grad("W"))
@@ -32,10 +32,10 @@ from DataLayers import *
 # linear_layer2=Linear(inter_size,output_size,examplary=True)
 # layers=[linear_layer1,linear_layer2]
 # seq=Sequential(layers)
-# input=np.arange(input_size).reshape((input_size,1))
+# input=np.arange(input_size).reshape((-1,1))
 # print(seq.forward(input))
 # print("\n\n")
-# output_gradient=np.arange(output_size).reshape((1,output_size))
+# output_gradient=np.arange(output_size).reshape((-1,1))
 # seq.backward(output_gradient)
 # print(seq.layers[0].grad("W"))
 # print(seq.layers[1].grad("W"))
@@ -44,10 +44,10 @@ from DataLayers import *
 # input_size=4
 # output_size=4
 # sig_layer=Sigmoid(input_size,output_size)
-# input=np.arange(input_size).reshape((input_size,1))
+# input=np.arange(input_size).reshape((-1,1))
 # print(input)
 # print(sig_layer.forward(input))
-# output_gradient=np.arange(output_size).reshape((1,output_size))
+# output_gradient=np.arange(output_size).reshape((-1,1))
 # print(output_gradient)
 # print(sig_layer.backward(output_gradient))
 

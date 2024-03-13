@@ -44,16 +44,16 @@ class Linear(Layer):
         return self.output
 
     def backward(self, output_gradient):
-        assert output_gradient.shape==(1,self.output_size)
+        assert output_gradient.shape==(self.output_size,1)
         W, b = self.params
-        input_gradient=output_gradient @ W
+        input_gradient= W.T @ output_gradient
         W_grad, b_grad = self.grads
-        W_grad += output_gradient.T @ self.input.T
-        b_grad += output_gradient.T
+        W_grad += output_gradient @ self.input.T
+        b_grad += output_gradient
         self.grads=[W_grad, b_grad]
         assert W_grad.shape==W.shape
         assert b_grad.shape==b.shape
-        assert input_gradient.shape==(1,self.input_size)
+        assert input_gradient.shape==(self.input_size,1)
         return input_gradient
 
     def param(self, parameter_name=None):
@@ -88,10 +88,9 @@ class Sigmoid(Layer):
         return self.output
 
     def backward(self, output_gradient):
-        assert output_gradient.shape==(1,self.output_size)
-        output_T=self.output.T
-        input_gradient=output_T*(1-output_T)*output_gradient
-        assert input_gradient.shape==(1,self.input_size)
+        assert output_gradient.shape==(self.output_size,1)
+        input_gradient=self.output * (1-self.output)* output_gradient
+        assert input_gradient.shape==(self.input_size,1)
         return input_gradient
 
 
@@ -108,14 +107,16 @@ class Sequential:
         for layer in self.layers:
             intermediate = layer.forward(intermediate)
         output = intermediate
+        assert output.shape == (self.output_size,1)
         return output
 
     def backward(self, output_gradient):
-        assert output_gradient.shape == (1, self.output_size)
+        assert output_gradient.shape == (self.output_size, 1)
         intermediate_gradient = output_gradient
         for layer in reversed(self.layers):
             intermediate_gradient = layer.backward(intermediate_gradient)
         input_gradient = intermediate_gradient
+        assert input_gradient.shape == (self.input_size, 1)
         return input_gradient
 
 
