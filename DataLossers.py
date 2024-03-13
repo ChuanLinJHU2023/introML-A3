@@ -1,7 +1,6 @@
 from DataLayers import *
 
 
-
 class Loss:
     def __init__(self, input_size=None):
         self.input_size = input_size
