@@ -17,7 +17,7 @@ class Loss:
     def grad(self):
         raise NotImplementedError
 
-    def input_check(self, predicted, groundtruth):
+    def shape_check(self, predicted, groundtruth):
         assert predicted.shape == groundtruth.shape == (self.input_size, 1)
 
     def reshape(self,predicted,groundtruth):
@@ -30,7 +30,7 @@ class SSE(Loss):
     def value(self, predicted, groundtruth, need_reshape=True):
         if need_reshape:
             predicted, groundtruth= self.reshape(predicted,groundtruth)
-        self.input_check(predicted, groundtruth)
+        self.shape_check(predicted, groundtruth)
         self.predicted=predicted
         self.groundtruth=groundtruth
         value = np.sum(np.square(predicted - groundtruth))
@@ -47,7 +47,7 @@ class SoftmaxCrossEntropy(Loss):
             groundtruth = self.one_hot_encode(groundtruth)
         if need_reshape:
             predicted, groundtruth = self.reshape(predicted, groundtruth)
-        self.input_check(predicted, groundtruth)
+        self.shape_check(predicted, groundtruth)
         self.predicted=predicted
         self.groundtruth=groundtruth
         predicted = self.softmax(predicted)
@@ -61,7 +61,7 @@ class SoftmaxCrossEntropy(Loss):
 
     def cross_entropy(self, probabilities_pred, probabilities_true):
         assert probabilities_pred.shape == probabilities_true.shape == (self.input_size, 1)
-        return np.sum(np.log2(probabilities_pred + 1e-30) * probabilities_true)
+        return -np.sum(np.log2(probabilities_pred + 1e-30) * probabilities_true)
 
     def one_hot_encode(self, class_k):
         number_of_classes = self.input_size
