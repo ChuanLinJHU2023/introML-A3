@@ -49,9 +49,10 @@ class Linear(Layer):
         W_grad, b_grad = self.grads
         W_grad += output_gradient.T @ self.input.T
         b_grad += output_gradient.T
+        self.grads=[W_grad, b_grad]
         assert W_grad.shape==W.shape
         assert b_grad.shape==b.shape
-        self.grads=[W_grad, b_grad]
+        assert input_gradient.shape==(1,self.input_size)
         return input_gradient
 
     def param(self, parameter_name=None):
@@ -86,7 +87,9 @@ class Sigmoid(Layer):
 
     def backward(self, output_gradient):
         assert output_gradient.shape==(1,self.output_size)
-        input_gradient=self.output*(1-self.output)*output_gradient
+        output_T=self.output.T
+        input_gradient=output_T*(1-output_T)*output_gradient
+        assert input_gradient.shape==(1,self.input_size)
         return input_gradient
 
 
