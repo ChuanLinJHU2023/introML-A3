@@ -40,6 +40,7 @@ class Linear(Layer):
         self.input=input
         W, b = self.params
         self.output= W @ input + b
+        assert self.output.shape==(self.output_size,1)
         return self.output
 
     def backward(self, output_gradient):
@@ -83,6 +84,7 @@ class Sigmoid(Layer):
         assert input.shape==(self.input_size,1)
         self.input=input
         self.output = 1 / (1 + np.exp(-input))
+        assert self.output.shape == (self.output_size, 1)
         return self.output
 
     def backward(self, output_gradient):

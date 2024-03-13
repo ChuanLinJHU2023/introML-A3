@@ -50,3 +50,11 @@ from DataPredictors import *
 # output_gradient=np.arange(output_size).reshape((1,output_size))
 # print(output_gradient)
 # print(sig_layer.backward(output_gradient))
+
+
+# input_size=4
+# output_size=1
+# linear_layer=Linear(input_size,output_size,examplary=True)
+# input=np.arange(input_size).reshape((input_size,1))
+# print(input)
+# print(linear_layer.forward(input))
