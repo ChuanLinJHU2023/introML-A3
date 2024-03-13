@@ -44,6 +44,8 @@ class GradientDecsent(Optimizer):
                 layer.grads[i]=np.zeros(shape)
 
 
+# class Model:
+#     def __init__(self,):
 
 
 

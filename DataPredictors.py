@@ -23,10 +23,13 @@ class Layer:
 
 
 class Linear(Layer):
-    def __init__(self, input_size, output_size, W:np.ndarray = None, b:np.ndarray = None):
+    def __init__(self, input_size, output_size, W:np.ndarray = None, b:np.ndarray = None, examplary=False):
         super().__init__(input_size, output_size)
         W=np.random.randn(output_size,input_size) if W is None else W
         b=np.random.randn(output_size,1) if b is None else b
+        if examplary:
+            W=np.arange(output_size*input_size).reshape((output_size,input_size))
+            b = np.arange(output_size).reshape((output_size,1))
         W_grad=np.zeros((output_size,input_size))
         b_grad=np.zeros((output_size,1))
         self.params=[W,b]
@@ -72,8 +75,8 @@ class Linear(Layer):
 
 class Sigmoid(Layer):
     def __init__(self, input_size, output_size):
+        assert input_size == output_size
         super().__init__(input_size, output_size)
-        assert input_size==output_size
 
     def forward(self, input):
         assert input.shape==(self.input_size,1)
@@ -92,7 +95,7 @@ class Sequential:
         assert isinstance(layers, list)
         self.layers = layers
         self.input_size = layers[0].input_size
-        self.output_size = layers[1].input_size
+        self.output_size = layers[-1].output_size
 
     def forward(self, input):
         assert input.shape == (self.input_size, 1)
