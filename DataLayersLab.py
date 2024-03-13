@@ -1,5 +1,5 @@
 import numpy as np
-from DataPredictors import *
+from DataLayers import *
 
 
 # input_size=4
