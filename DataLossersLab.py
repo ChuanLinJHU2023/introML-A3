@@ -1,4 +1,5 @@
 from DataLossers import *
+
 # input_size=5
 # loss=SSE(input_size)
 # predicted= [2,3,4,5,6]

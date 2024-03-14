@@ -11,7 +11,7 @@ class Loss:
         assert self.input_size is None
         self.input_size = input_size
 
-    def value(self, predicted, groundtruth,need_reshape=True):
+    def value(self, predicted, groundtruth, need_reshape=True):
         raise NotImplementedError
 
     def grad(self):

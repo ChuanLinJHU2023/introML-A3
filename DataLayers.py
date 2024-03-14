@@ -9,7 +9,7 @@ class Layer:
         self.params=None
         self.grads=None
 
-    def forward(self, input):
+    def forward(self, input, need_reshape=False):
         raise NotImplementedError
 
     def backward(self, output_gradient):
@@ -25,6 +25,8 @@ class Layer:
 class Linear(Layer):
     def __init__(self, input_size, output_size, W:np.ndarray = None, b:np.ndarray = None, examplary=False):
         super().__init__(input_size, output_size)
+        assert W.shape==(output_size,input_size)
+        assert b.shape==(output_size,1)
         W=np.random.randn(output_size,input_size) if W is None else W
         b=np.random.randn(output_size,1) if b is None else b
         if examplary:
@@ -35,7 +37,9 @@ class Linear(Layer):
         self.params=[W,b]
         self.grads=[W_grad,b_grad]
 
-    def forward(self, input):
+    def forward(self, input, need_reshape=False):
+        if need_reshape:
+            input=np.array(input).reshape(-1,1)
         assert input.shape==(self.input_size,1)
         self.input=input
         W, b = self.params
