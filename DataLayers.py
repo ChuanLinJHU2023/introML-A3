@@ -84,7 +84,7 @@ class Sigmoid(Layer):
         assert input_size == output_size
         super().__init__(input_size, output_size)
 
-    def forward(self, input):
+    def forward(self, input, need_reshape=False):
         assert input.shape==(self.input_size,1)
         self.input=input
         self.output = 1 / (1 + np.exp(-input))
@@ -105,7 +105,9 @@ class Sequential:
         self.input_size = layers[0].input_size
         self.output_size = layers[-1].output_size
 
-    def forward(self, input):
+    def forward(self, input, need_reshape=False):
+        if need_reshape:
+            input=np.array(input).reshape(-1,1)
         assert input.shape == (self.input_size, 1)
         intermediate = input
         for layer in self.layers:

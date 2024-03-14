@@ -11,12 +11,13 @@ class Optimizer:
 
 
 class GradientDecsent(Optimizer):
-    def step(self, seq: Union[Sequential,Layer]):
-        if isinstance(seq,Sequential):
+    def step(self, seq_or_lay: Union[Sequential, Layer]):
+        if isinstance(seq_or_lay, Sequential):
+            seq=seq_or_lay
             for layer in seq.layers:
                 self.step(layer)
         else:
-            layer=seq
+            layer=seq_or_lay
             for i in range(len(layer.params)):
                 assert layer.params[i].shape == layer.grads[i].shape
                 layer.params[i] -= layer.grads[i] * self.learning_rate

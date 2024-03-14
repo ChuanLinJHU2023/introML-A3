@@ -20,37 +20,74 @@ print("example ys")
 print(example_ys)
 print("\n\n")
 
-input_size=3
-output_size=1
-lr=0.00001
-# n_epochs=20
-n_epochs=20000
-W=np.ones((output_size,input_size))
-# W=np.array([1,2,3]).reshape((output_size,input_size)).astype(np.float)
-b=np.zeros((output_size,1))
-linear_layer=Linear(input_size,output_size,W=W,b=b)
-opt=GradientDecsent(lr)
-loss=SSE(output_size)
-for epoch_i in range(n_epochs):
-    print("Epoch {}".format(epoch_i)+"//"*100)
-    print("W", linear_layer.params[0])
-    print("W_grad", linear_layer.grads[0])
-    print("\n")
-    for dp_i in range(data_size):
-        x=example_xs[dp_i]
-        y=example_ys[dp_i]
-        y_pred=linear_layer.forward(x,need_reshape=True)
-        value=loss.value(y_pred,y)
-        grad=loss.grad()
-        linear_layer.backward(grad)
-        # print("x",x)
-        # print("y",y)
-        # print("y pred",y_pred)
-        # print("value", value)
-        # print("W",linear_layer.params[0])
-        # print("W_grad",linear_layer.grads[0])
-        # print("\n")
-    opt.step(linear_layer)
+
+def expeiment1():
+    input_size=3
+    output_size=1
+    lr=0.00001
+    # n_epochs=20
+    n_epochs=20000
+    W=np.ones((output_size,input_size))
+    # W=np.array([1,2,3]).reshape((output_size,input_size)).astype(np.float)
+    b=np.zeros((output_size,1))
+    linear_layer=Linear(input_size,output_size,W=W,b=b)
+    opt=GradientDecsent(lr)
+    loss=SSE(output_size)
+    for epoch_i in range(n_epochs):
+        print("Epoch {}".format(epoch_i)+"//"*100)
+        print("W", linear_layer.params[0])
+        print("W_grad", linear_layer.grads[0])
+        print("\n")
+        for dp_i in range(data_size):
+            x=example_xs[dp_i]
+            y=example_ys[dp_i]
+            y_pred=linear_layer.forward(x,need_reshape=True)
+            value=loss.value(y_pred,y)
+            grad=loss.grad()
+            linear_layer.backward(grad)
+            # print("x",x)
+            # print("y",y)
+            # print("y pred",y_pred)
+            # print("value", value)
+            # print("W",linear_layer.params[0])
+            # print("W_grad",linear_layer.grads[0])
+            # print("\n")
+        opt.step(linear_layer)
+# expeiment1()
 
 
-
+def expeiment2():
+    input_size=3
+    output_size=1
+    lr=0.00001
+    # n_epochs=20
+    n_epochs=20000
+    W=np.ones((output_size,input_size))
+    # W=np.array([1,2,3]).reshape((output_size,input_size)).astype(np.float)
+    b=np.zeros((output_size,1))
+    linear_layer=Linear(input_size,output_size,W=W,b=b)
+    layers=[linear_layer]
+    seq=Sequential(layers)
+    opt=GradientDecsent(lr)
+    loss=SSE(output_size)
+    for epoch_i in range(n_epochs):
+        print("Epoch {}".format(epoch_i)+"//"*100)
+        print("W", linear_layer.params[0])
+        print("W_grad", linear_layer.grads[0])
+        print("\n")
+        for dp_i in range(data_size):
+            x=example_xs[dp_i]
+            y=example_ys[dp_i]
+            y_pred=seq.forward(x,need_reshape=True)
+            value=loss.value(y_pred,y)
+            grad=loss.grad()
+            seq.backward(grad)
+            # print("x",x)
+            # print("y",y)
+            # print("y pred",y_pred)
+            # print("value", value)
+            # print("W",linear_layer.params[0])
+            # print("W_grad",linear_layer.grads[0])
+            # print("\n")
+        opt.step(linear_layer)
+# expeiment2()
