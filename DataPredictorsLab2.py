@@ -32,12 +32,12 @@ lr = 0.01
 n_epochs = 2000
 label_feature = 0
 batch_size=10
-loss=SoftmaxCrossEntropy(input_size=output_size)
+loss=SoftmaxCrossEntropy(output_size=output_size)
 opt=GradientDecsent(lr=lr)
 linear_layer = Linear(input_size, output_size)
 layers = [linear_layer]
 seq = Sequential(layers)
-model = DNN_Model(seq, opt, loss, label_feature=label_feature)
+model = DNN(seq, opt, loss, label_feature=label_feature)
 model.fit(example_df, batch_size=batch_size,n_epochs=n_epochs)
 print(linear_layer.param("W"))
 print(linear_layer.param("b"))

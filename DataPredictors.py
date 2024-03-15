@@ -5,7 +5,7 @@ from DataLossers import *
 import pandas as pd
 
 
-class DNN_Model:
+class DNN:
 
     def __init__(self, seq: Sequential, opt: Optimizer, loss: Loss, label_feature):
         self.seq: Sequential = seq
