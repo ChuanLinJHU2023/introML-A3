@@ -5,9 +5,9 @@ import numpy as  np
 import random
 
 data_size=20
-def tuple_generate():
-    return [random.randint(0,10),random.randint(0,10),random.randint(0,10)]
-example_xs=[ tuple_generate() for i in range(data_size)]
+# def tuple_generate():
+#     return [random.randint(0,10),random.randint(0,10),random.randint(0,10)]
+# example_xs=[ tuple_generate() for i in range(data_size)]
 example_xs=\
     [[3, 1, 10], [7, 1, 2], [8, 2, 4], [4, 7, 9], [9, 4, 0], [6, 6, 6],
      [4, 0, 6], [2, 4, 0], [1, 4, 7], [0, 8, 6], [6, 3, 10], [8, 10, 5],

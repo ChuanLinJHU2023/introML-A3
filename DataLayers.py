@@ -25,10 +25,10 @@ class Layer:
 class Linear(Layer):
     def __init__(self, input_size, output_size, W:np.ndarray = None, b:np.ndarray = None, examplary=False):
         super().__init__(input_size, output_size)
-        assert W.shape==(output_size,input_size)
-        assert b.shape==(output_size,1)
         W=np.random.randn(output_size,input_size) if W is None else W
         b=np.random.randn(output_size,1) if b is None else b
+        assert W.shape==(output_size,input_size)
+        assert b.shape==(output_size,1)
         if examplary:
             W=np.arange(output_size*input_size).reshape((output_size,input_size))
             b = np.arange(output_size).reshape((output_size,1))
@@ -115,7 +115,7 @@ class Sequential:
         output = intermediate
         assert output.shape == (self.output_size,1)
         if need_decode:
-            output=self.one_hot_decode(out)
+            output=self.one_hot_decode(output)
         return output
 
     def backward(self, output_gradient):

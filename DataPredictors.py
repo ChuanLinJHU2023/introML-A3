@@ -40,15 +40,16 @@ class DNN_Model:
                 self.opt.step(self.seq)
             print("Epoch {}: Loss {}".format(epoch_i, epoch_loss))
 
-    def predict(self, df_test: pd.DataFrame):
+    def predict(self, df_test: pd.DataFrame, show_detail=False):
         arr_test = np.array(df_test)
         datapoint_number = arr_test.shape[0]
         xs = np.delete(arr_test, self.label_feature_index, axis=1)
         ys = np.zeros(datapoint_number)
-        start = 0
-        end = datapoint_number
-        for dp_i in range(start, end):
-            x = xs[dp_i].reshape((-1, 1))
-            predicted = self.seq.forward(x, need_decode=self.whether_decode)
+        for dp_i in range(datapoint_number):
+            x = xs[dp_i]
+            predicted = self.seq.forward(x, need_reshape=True, need_decode=self.whether_decode)
             ys[dp_i] = predicted
+        if show_detail:
+            print("the predictions are as follows:")
+            print(ys)
         return ys

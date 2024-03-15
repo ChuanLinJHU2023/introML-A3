@@ -2,7 +2,7 @@ from DataLayers import *
 
 
 class Loss:
-    def __init__(self, input_size=None):
+    def __init__(self, input_size):
         self.input_size = input_size
         self.predicted = None
         self.groundtruth = None
@@ -69,7 +69,6 @@ class SoftmaxCrossEntropy(Loss):
         probabilities = np.zeros(shape)
         probabilities[class_k][0] = 1
         return probabilities
-
 
     def grad(self):
         grad=self.softmax(self.predicted) - self.groundtruth

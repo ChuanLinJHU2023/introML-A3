@@ -3,13 +3,19 @@ from DataLossers import *
 from DataPredictors import *
 from DataOptimizers import *
 
-example_xs=\
-    [[3, 1, 10], [7, 1, 2], [8, 2, 4], [4, 7, 9], [9, 4, 0], [6, 6, 6],
-     [4, 0, 6], [2, 4, 0], [1, 4, 7], [0, 8, 6], [6, 3, 10], [8, 10, 5],
-     [6, 2, 5], [10, 3, 9], [7, 2, 1], [1, 2, 4], [10, 4, 6], [10, 5, 7],
-     [5, 9, 4], [1, 4, 0]]
+example_xs= \
+    [[-3, 1, -10],[-7, -1, 2],[8, -2, -4],[-4, 7, -9],[-9, 4, 0],
+     [-6, 6, -6],[4, 0, -6],[-2, 4, 0],[-1, -4, 7], [0, -8, 6],
+     [-6, 3, -10],[-8, 10, -5],[6, -2, -5],[-10, 3, -9],[-7, 2, -1],
+     [1, -2, -4],[-10, -4, 6],[-10, -5, 7],[-5, -9, 4],[1, -4, 0]]
 def func(a,b,c):
-    return a + 2 * b + 3 * c + 5
+    if a>0:
+        return 0
+    elif b>0:
+        return 1
+    elif c>0:
+        return 2
+
 example_ys=[func(a,b,c) for (a,b,c) in example_xs]
 example_df=pd.DataFrame([(func(a,b,c), a, b, c) for (a,b,c) in example_xs])
 print("example xs")
@@ -21,12 +27,12 @@ print(example_df)
 print("\n\n")
 
 input_size = 3
-output_size = 1
-lr = 0.001
+output_size = 3
+lr = 0.01
 n_epochs = 2000
 label_feature = 0
-batch_size=5
-loss=SSE(input_size=output_size)
+batch_size=10
+loss=SoftmaxCrossEntropy(input_size=output_size)
 opt=GradientDecsent(lr=lr)
 linear_layer = Linear(input_size, output_size)
 layers = [linear_layer]
