@@ -11,7 +11,7 @@ class Loss:
         assert self.input_size is None
         self.input_size = input_size
 
-    def value(self, predicted, groundtruth, need_reshape=True):
+    def value(self, predicted, groundtruth, need_reshape=False, need_encode=False):
         raise NotImplementedError
 
     def grad(self):
@@ -27,7 +27,7 @@ class Loss:
 
 
 class SSE(Loss):
-    def value(self, predicted, groundtruth, need_reshape=True):
+    def value(self, predicted, groundtruth, need_reshape=False, need_encode=False):
         if need_reshape:
             predicted, groundtruth= self.reshape(predicted,groundtruth)
         self.shape_check(predicted, groundtruth)
@@ -42,7 +42,7 @@ class SSE(Loss):
 
 
 class SoftmaxCrossEntropy(Loss):
-    def value(self, predicted, groundtruth, need_reshape=True, need_encode=False):
+    def value(self, predicted, groundtruth, need_reshape=False, need_encode=False):
         if need_encode:
             groundtruth = self.one_hot_encode(groundtruth)
         if need_reshape:
@@ -70,6 +70,9 @@ class SoftmaxCrossEntropy(Loss):
         probabilities[class_k][0] = 1
         return probabilities
 
+
     def grad(self):
         grad=self.softmax(self.predicted) - self.groundtruth
         return grad
+
+

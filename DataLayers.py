@@ -105,7 +105,7 @@ class Sequential:
         self.input_size = layers[0].input_size
         self.output_size = layers[-1].output_size
 
-    def forward(self, input, need_reshape=False):
+    def forward(self, input, need_reshape=False, need_decode=False):
         if need_reshape:
             input=np.array(input).reshape(-1,1)
         assert input.shape == (self.input_size, 1)
@@ -114,6 +114,8 @@ class Sequential:
             intermediate = layer.forward(intermediate)
         output = intermediate
         assert output.shape == (self.output_size,1)
+        if need_decode:
+            output=self.one_hot_decode(out)
         return output
 
     def backward(self, output_gradient):
@@ -124,5 +126,9 @@ class Sequential:
         input_gradient = intermediate_gradient
         assert input_gradient.shape == (self.input_size, 1)
         return input_gradient
+
+    def one_hot_decode(self, prediction):
+        assert prediction.shape == (self.output_size, 1)
+        return np.argmax(prediction)
 
 

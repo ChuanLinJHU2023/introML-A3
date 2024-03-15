@@ -4,13 +4,17 @@ from DataOptimizers import *
 from DataLossers import *
 import pandas as pd
 
+
 class DNN_Model:
+
     def __init__(self, seq: Sequential, opt: Optimizer, loss: Loss, label_feature):
-        self.seq = seq
-        self.opt = opt
-        self.loss = loss
+        self.seq: Sequential = seq
+        self.opt: Optimizer = opt
+        self.loss: Loss = loss
         self.label_feature = label_feature
         self.label_feature_index = None
+        self.whether_encode = isinstance(loss, SoftmaxCrossEntropy)
+        self.whether_decode = isinstance(loss, SoftmaxCrossEntropy)
 
     def fit(self, df_train: pd.DataFrame, batch_size, n_epochs):
         arr_train = np.array(df_train)
@@ -19,21 +23,22 @@ class DNN_Model:
         xs = np.delete(arr_train, self.label_feature_index, axis=1)
         ys = arr_train[:, self.label_feature_index]
         for epoch_i in range(n_epochs):
-            epoch_loss=0
+            epoch_loss = 0
             for batch_i in range(datapoint_number // batch_size):
                 start = batch_i * batch_size
-                end = min((batch_i + 1) * batch_size, datapoint_number)
+                end = (batch_i + 1) * batch_size
                 for dp_i in range(start, end):
-                    x = xs[dp_i].reshape((-1, 1))
+                    x = xs[dp_i]
                     y = ys[dp_i]
-                    predicted = self.seq.forward(x)
+                    predicted = self.seq.forward(x, need_reshape=True)
                     ground_truth = y
-                    loss = self.loss.value(predicted, ground_truth, need_reshape=True)
+                    loss = self.loss.value(predicted, ground_truth, need_reshape=True,
+                                           need_encode=self.whether_encode)
                     epoch_loss += loss
                     grad = self.loss.grad()
                     self.seq.backward(grad)
                 self.opt.step(self.seq)
-                print("Epoch {}: Loss {}".format(epoch_i, epoch_loss))
+            print("Epoch {}: Loss {}".format(epoch_i, epoch_loss))
 
     def predict(self, df_test: pd.DataFrame):
         arr_test = np.array(df_test)
@@ -44,6 +49,6 @@ class DNN_Model:
         end = datapoint_number
         for dp_i in range(start, end):
             x = xs[dp_i].reshape((-1, 1))
-            predicted = self.seq.forward(x)
+            predicted = self.seq.forward(x, need_decode=self.whether_decode)
             ys[dp_i] = predicted
         return ys
