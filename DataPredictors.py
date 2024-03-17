@@ -6,7 +6,7 @@ import pandas as pd
 
 class DNN:
 
-    def __init__(self, seq: Sequential, opt: Optimizer, loss: Loss, label_feature):
+    def __init__(self, seq: Sequential, opt: Optimizer, loss: Loss, label_feature, batch_size=None, n_epochs=None):
         self.seq: Sequential = seq
         self.opt: Optimizer = opt
         self.loss: Loss = loss
@@ -14,8 +14,12 @@ class DNN:
         self.label_feature_index = None
         self.whether_encode = isinstance(loss, SoftmaxCrossEntropy)
         self.whether_decode = isinstance(loss, SoftmaxCrossEntropy)
+        self.batch_Size = batch_size
+        self.n_epochs = n_epochs
 
-    def fit(self, df_train: pd.DataFrame, batch_size, n_epochs):
+    def fit(self, df_train: pd.DataFrame, batch_size=None, n_epochs=None):
+        batch_size = self.batch_Size if batch_size is None else batch_size
+        n_epochs = self.n_epochs if n_epochs is None else n_epochs
         arr_train = np.array(df_train)
         self.label_feature_index = list(df_train.columns).index(self.label_feature)
         datapoint_number = arr_train.shape[0]

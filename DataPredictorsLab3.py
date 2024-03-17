@@ -39,8 +39,10 @@ hidden_layer2_ = Sigmoid(hidden_size2, hidden_size2)
 output_layer = Linear(hidden_size2, output_size)
 layers = [hidden_layer1, hidden_layer1_, hidden_layer2, hidden_layer2_, output_layer]
 seq = Sequential(layers)
-model = DNN(seq, opt, loss, label_feature=label_feature)
-model.fit(df, batch_size=batch_size, n_epochs=n_epochs)
+# model = DNN(seq, opt, loss, label_feature=label_feature)
+model = DNN(seq, opt, loss, label_feature=label_feature, batch_size=batch_size, n_epochs=n_epochs)
+# model.fit(df, batch_size=batch_size, n_epochs=n_epochs)
+model.fit(df)
 prediction=model.predict(df)[:50]
 answer=df[label_feature][:50]
 print(prediction)
