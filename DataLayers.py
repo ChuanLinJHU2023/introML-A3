@@ -111,10 +111,10 @@ class Sigmoid(Layer):
 
 class Sequential:
     def __init__(self, layers: List[Layer]):
-        assert isinstance(layers, list)
         self.layers = layers
         self.input_size = layers[0].input_size
         self.output_size = layers[-1].output_size
+        self.check_layers()
 
     def forward(self, input, need_reshape=False, need_decode=False):
         if need_reshape:
@@ -152,6 +152,12 @@ class Sequential:
     def clear_params(self):
         for layer in self.layers:
             layer.clear_params()
+
+    def check_layers(self):
+        for i in range(len(self.layers)-1):
+            layer = self.layers[i]
+            next_layer = self.layers[i+1]
+            assert layer.output_size == next_layer.input_size
 
 
 
