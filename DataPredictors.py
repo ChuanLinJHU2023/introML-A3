@@ -1,5 +1,4 @@
 import numpy as np
-from DataLayers import *
 from DataOptimizers import *
 from DataLossers import *
 import pandas as pd

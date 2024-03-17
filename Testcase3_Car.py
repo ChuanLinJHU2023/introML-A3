@@ -2,6 +2,7 @@ import pandas as pd
 
 from DataPreprocessing import *
 from DataPredictors import *
+from DataLayers import *
 
 df: pd.DataFrame = data_loader("Datasets/car.data")
 print("Car Dataset")
@@ -24,11 +25,11 @@ print("The input size is {}".format(input_size))
 print("The output size is {}\n\n".format(output_size))
 
 
-hidden_size1=50
-hidden_size2=20
+hidden_size1=20
+hidden_size2=10
 lr = 0.001
 n_epochs = 500
-batch_size = 100
+batch_size = 50
 loss = SoftmaxCrossEntropy(output_size=output_size)
 opt = GradientDecsent(lr=lr)
 hidden_layer1 = Linear(input_size, hidden_size1)
@@ -40,5 +41,7 @@ layers = [hidden_layer1, hidden_layer2, output_layer]
 seq = Sequential(layers)
 model = DNN(seq, opt, loss, label_feature=label_feature)
 model.fit(df, batch_size=batch_size, n_epochs=n_epochs)
-prediction=model.predict(df)[:20]
-answer=df[label_feature][:20]
+prediction=model.predict(df)[:100]
+answer=df[label_feature][:100]
+print(prediction)
+print(answer)

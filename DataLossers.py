@@ -51,11 +51,11 @@ class SoftmaxCrossEntropy(Loss):
         self.predicted=predicted
         self.groundtruth=groundtruth
         predicted = self.softmax(predicted)
-        return self.cross_entropy(predicted,groundtruth)
+        loss_value = self.cross_entropy(predicted,groundtruth)
+        return loss_value
 
     def softmax(self, predicted):
-        print("!!!!!!!!!!!")
-        print(predicted)
+        predicted = predicted - np.max(predicted)
         exp = np.exp(predicted)
         exp_sum = np.sum(exp)
         probabilities = exp / exp_sum

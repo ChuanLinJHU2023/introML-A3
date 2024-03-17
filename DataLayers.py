@@ -131,4 +131,11 @@ class Sequential:
         assert prediction.shape == (self.output_size, 1)
         return np.argmax(prediction)
 
+    def show_params(self):
+        for i,layer in enumerate(self.layers):
+            print("This is the params for layer {}".format(i))
+            print(layer.params)
+            print("This is the output for layer {}".format(i))
+            print(layer.output)
+
 
