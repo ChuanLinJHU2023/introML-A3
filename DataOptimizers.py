@@ -18,9 +18,10 @@ class GradientDecsent(Optimizer):
                 self.step(layer)
         else:
             layer=seq_or_lay
-            for i in range(len(layer.params)):
-                assert layer.params[i].shape == layer.grads[i].shape
-                layer.params[i] -= layer.grads[i] * self.learning_rate
-                layer.grads[i][:]=0
+            if layer.params is not None:
+                for i in range(len(layer.params)):
+                    assert layer.params[i].shape == layer.grads[i].shape
+                    layer.params[i] -= layer.grads[i] * self.learning_rate
+                    layer.grads[i][:]=0
 
 
