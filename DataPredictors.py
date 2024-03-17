@@ -6,7 +6,8 @@ import pandas as pd
 
 class DNN:
 
-    def __init__(self, seq: Sequential, opt: Optimizer, loss: Loss, label_feature, batch_size=None, n_epochs=None):
+    def __init__(self, seq: Sequential, opt: Optimizer, loss: Loss, label_feature, batch_size=None, n_epochs=None,
+                 clear_after_pred=False):
         self.seq: Sequential = seq
         self.opt: Optimizer = opt
         self.loss: Loss = loss
@@ -16,6 +17,7 @@ class DNN:
         self.whether_decode = isinstance(loss, SoftmaxCrossEntropy)
         self.batch_Size = batch_size
         self.n_epochs = n_epochs
+        self.clear_after_pred = clear_after_pred
 
     def fit(self, df_train: pd.DataFrame, batch_size=None, n_epochs=None):
         batch_size = self.batch_Size if batch_size is None else batch_size
@@ -52,6 +54,8 @@ class DNN:
             x = xs[dp_i]
             predicted = self.seq.forward(x, need_reshape=True, need_decode=self.whether_decode)
             ys[dp_i] = predicted
+        if self.clear_after_pred:
+            self.seq.clear_params()
         if show_detail:
             print("the predictions are as follows:")
             print(ys)

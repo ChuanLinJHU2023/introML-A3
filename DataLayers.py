@@ -21,6 +21,8 @@ class Layer:
     def grad(self, parameter_name=None):
         raise NotImplementedError
 
+    def clear_params(self):
+        raise NotImplementedError
 
 class Linear(Layer):
     def __init__(self, input_size, output_size, W:np.ndarray = None, b:np.ndarray = None, examplary=False):
@@ -78,6 +80,13 @@ class Linear(Layer):
             return b_grad
         return None
 
+    def clear_params(self):
+        W, b = self.params
+        W_shape = W.shape
+        b_shape = b.shape
+        self.params[0] = np.random.randn(*W_shape)
+        self.params[1] = np.random.randn(*b_shape)
+
 
 class Sigmoid(Layer):
     def __init__(self, input_size, output_size):
@@ -97,6 +106,8 @@ class Sigmoid(Layer):
         assert input_gradient.shape==(self.input_size,1)
         return input_gradient
 
+    def clear_params(self):
+        pass
 
 class Sequential:
     def __init__(self, layers: List[Layer]):
@@ -137,5 +148,11 @@ class Sequential:
             print(layer.params)
             print("This is the output for layer {}".format(i))
             print(layer.output)
+
+    def clear_params(self):
+        for layer in self.layers:
+            layer.clear_params()
+
+
 
 
