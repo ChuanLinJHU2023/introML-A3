@@ -34,7 +34,6 @@ loss = SoftmaxCrossEntropy(output_size=output_size)
 opt = GradientDecsent(lr=lr)
 
 hidden_size=10
-
 hidden_layer = Linear(input_size, hidden_size)
 hidden_layer_ = Sigmoid(hidden_size, hidden_size)
 output_layer = Linear(hidden_size, output_size)

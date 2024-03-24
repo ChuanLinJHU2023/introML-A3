@@ -55,7 +55,7 @@ class SoftmaxCrossEntropy(Loss):
         return loss_value
 
     def softmax(self, predicted):
-        predicted = predicted - np.max(predicted)
+        # predicted = predicted - np.max(predicted)
         exp = np.exp(predicted)
         exp_sum = np.sum(exp)
         probabilities = exp / exp_sum
@@ -66,6 +66,7 @@ class SoftmaxCrossEntropy(Loss):
         return -np.sum(np.log2(probabilities_pred + 1e-30) * probabilities_true)
 
     def one_hot_encode(self, class_k):
+        class_k = int(class_k)
         number_of_classes = self.output_size
         shape = (number_of_classes, 1)
         probabilities = np.zeros(shape)
