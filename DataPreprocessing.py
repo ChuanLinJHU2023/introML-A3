@@ -40,6 +40,7 @@ def data_encode(df, featureName, type, ordinalList=None):
     """Given a dataset, encodes ordinal data as integers or performs one-hot encoding on nominal features."""
     cols = {}
     if type == "n":  # nominal
+        assert ordinalList is None
         col = df[featureName]
         values = col.unique()
         for value in values:
@@ -57,6 +58,7 @@ def data_encode(df, featureName, type, ordinalList=None):
         index = colNames.index(featureName)
         df = df.reindex(columns=colNames[:index] + NewColNames + colNames[index + 1:])
     elif type == "o":  # ordinal
+        assert ordinalList is not None
         col = df[featureName]
         f = lambda x: ordinalList.index(x)
         df[featureName] = col.map(f)
@@ -187,7 +189,6 @@ def data_prediction_evaluator(groundTruth, predicted, metric=None, show_detail=F
     return ans
 
 
-
 def data_attribute_type_evaluator(df, threshold=30):
     """
     Evaluate the types of attributes in a DataFrame based on the number of unique values in each column.
@@ -199,3 +200,8 @@ def data_attribute_type_evaluator(df, threshold=30):
         else:
             attribute_kinds.append("n") # numerical
     return attribute_kinds
+
+def data_label_rename(df,label_feature):
+    labels = list(np.unique(df[label_feature]))
+    df[label_feature]=df[label_feature].map(lambda x: labels.index(x))
+    return df

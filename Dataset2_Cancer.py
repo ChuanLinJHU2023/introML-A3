@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 from DataPreprocessing import *
@@ -5,24 +6,19 @@ from DataPredictors import *
 from DataLayers import *
 from DataValidators import *
 
-df: pd.DataFrame = data_loader("Datasets/car.data")
-print("Car Dataset")
+df=data_loader("Datasets/breast-cancer-wisconsin.data",missing_value_symbol="?",idCol=0)
+print("Cancer Dataset")
 print("The original dataset is:")
-print(df, "\n\n")
-df = data_encode(df, 0, "o", ["low", "med", "high", "vhigh"])
-df = data_encode(df, 1, "o", ["low", "med", "high", "vhigh"])
-df = data_encode(df, 2, "o", ["2", "3", "4", "5more"])
-df = data_encode(df, 3, "o", ["2", "4", "more"])
-df = data_encode(df, 4, "o", ["small", "med", "big"])
-df = data_encode(df, 5, "o", ["low", "med", "high"])
-df = data_encode(df, 6, "o", ["unacc", "acc", "good", "vgood"])
-features=list(df.columns)[:-1]
-df=data_standardizer(df,features)
+print(df,"\n\n")
+df=data_imputer(df,[1,2,3,4,5,6,7,8,9])
+df=data_standardizer(df,[1,2,3,4,5,6,7,8,9])
+df=data_label_rename(df,10)
 print("The processed dataset is:")
-print(df, "\n\n")
-label_feature = 6
+print(df,"\n\n")
+label_feature = 10
 type = "c"
 metric = "MSE" if type == "r" else "01Loss"
+print("the class labels are:", np.unique(df[10]))
 
 
 # For the following models
@@ -69,7 +65,7 @@ FNN_model = DNN(seq_for_m1, opt, loss, label_feature=label_feature, batch_size=b
 
 
 # Autoencoder Model (1 hidden layer for auto network and 2 hidden layers for predictor network)
-hidden_size1 = 3
+hidden_size1 = 4
 hidden_size2 = 10
 print("The hidden size for Autoencoder are {} and {}".format(hidden_size1, hidden_size2))
 assert hidden_size1<=input_size

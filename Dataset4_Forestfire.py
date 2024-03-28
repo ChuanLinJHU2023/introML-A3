@@ -5,30 +5,25 @@ from DataPredictors import *
 from DataLayers import *
 from DataValidators import *
 
-df: pd.DataFrame = data_loader("Datasets/car.data")
-print("Car Dataset")
+df=data_loader("Datasets/forestfires.data",headerRow=0)
+print("Forestfire")
 print("The original dataset is:")
-print(df, "\n\n")
-df = data_encode(df, 0, "o", ["low", "med", "high", "vhigh"])
-df = data_encode(df, 1, "o", ["low", "med", "high", "vhigh"])
-df = data_encode(df, 2, "o", ["2", "3", "4", "5more"])
-df = data_encode(df, 3, "o", ["2", "4", "more"])
-df = data_encode(df, 4, "o", ["small", "med", "big"])
-df = data_encode(df, 5, "o", ["low", "med", "high"])
-df = data_encode(df, 6, "o", ["unacc", "acc", "good", "vgood"])
-features=list(df.columns)[:-1]
-df=data_standardizer(df,features)
+print(df,"\n\n")
+df=data_standardizer(df,["X","Y","FFMC","DMC","DC","ISI","temp","RH","wind","rain"])
+df = data_encode(df, "month", "n")
+df = data_encode(df, "day", "n")
 print("The processed dataset is:")
-print(df, "\n\n")
-label_feature = 6
-type = "c"
+print(df,"\n\n")
+
+label_feature = "area"
+type = "r"
 metric = "MSE" if type == "r" else "01Loss"
 
 
 # For the following models
 input_size = df.shape[1] - 1
-output_size = 4
-lr = 0.01
+output_size = 1
+lr = 0.001
 n_epochs = 500
 batch_size = 50
 print("The input size is {}".format(input_size))
@@ -53,8 +48,8 @@ linear_model = DNN(seq_for_m1, opt, loss, label_feature=label_feature, batch_siz
 
 
 # 2-hidden-layer FNN Model
-hidden_size1 = 20
-hidden_size2 = 10
+hidden_size1 = 30
+hidden_size2 = 20
 print("The hidden size for FNN are {} and {}".format(hidden_size1, hidden_size2))
 linear_layer1_for_m2 = Linear(input_size, hidden_size1)
 sigmoid_layer1_for_m2 = Sigmoid(hidden_size1, hidden_size1)
@@ -69,7 +64,7 @@ FNN_model = DNN(seq_for_m1, opt, loss, label_feature=label_feature, batch_size=b
 
 
 # Autoencoder Model (1 hidden layer for auto network and 2 hidden layers for predictor network)
-hidden_size1 = 3
+hidden_size1 = 4
 hidden_size2 = 10
 print("The hidden size for Autoencoder are {} and {}".format(hidden_size1, hidden_size2))
 assert hidden_size1<=input_size
