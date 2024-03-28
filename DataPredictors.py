@@ -206,3 +206,6 @@ class AutoEncoder:
         assert self.seq_enc.output_size == self.seq_enc.input_size
         for i in range(self.n_shared_layers):
             assert self.seq_enc.layers[i] is self.seq.layers[i]
+
+    def get_label_feature(self):
+        return self.label_feature

@@ -55,9 +55,9 @@ linear_model = DNN(seq_for_m1, opt, loss, label_feature=label_feature, batch_siz
 hidden_size1 = 20
 hidden_size2 = 10
 linear_layer1_for_m2 = Linear(input_size, hidden_size1)
-sigmoid_layer1_for_m2 = Linear(hidden_size1, hidden_size1)
+sigmoid_layer1_for_m2 = Sigmoid(hidden_size1, hidden_size1)
 linear_layer2_for_m2 = Linear(hidden_size1, hidden_size2)
-sigmoid_layer2_for_m2 = Linear(hidden_size2, hidden_size2)
+sigmoid_layer2_for_m2 = Sigmoid(hidden_size2, hidden_size2)
 linear_layer3_for_m2 = Linear(hidden_size2, output_size)
 layers_for_m2 = [linear_layer1_for_m2, sigmoid_layer1_for_m2, linear_layer2_for_m2, sigmoid_layer2_for_m2,
                  linear_layer3_for_m2]
@@ -71,9 +71,9 @@ hidden_size1 = 10
 hidden_size2 = 10
 assert hidden_size1<=input_size
 linear_layer1_for_m3 = Linear(input_size, hidden_size1)
-sigmoid_layer1_for_m3 = Linear(hidden_size1, hidden_size1)
+sigmoid_layer1_for_m3 = Sigmoid(hidden_size1, hidden_size1)
 linear_layer2_for_m3 = Linear(hidden_size1, hidden_size2)
-sigmoid_layer2_for_m3 = Linear(hidden_size2, hidden_size2)
+sigmoid_layer2_for_m3 = Sigmoid(hidden_size2, hidden_size2)
 linear_layer3_for_m3 = Linear(hidden_size2, output_size)
 layers_for_m3 = [linear_layer1_for_m3, sigmoid_layer1_for_m3, linear_layer2_for_m3, sigmoid_layer2_for_m3,
                  linear_layer3_for_m3]
