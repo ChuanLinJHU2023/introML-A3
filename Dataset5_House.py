@@ -84,6 +84,9 @@ seq_for_m3 = Sequential(layers_for_m3)
 linear_layer4_for_m3 = Linear(hidden_size1, input_size)
 layers_for_m3_enc = [linear_layer1_for_m3, sigmoid_layer1_for_m3, linear_layer4_for_m3]
 seq_for_m3_enc =Sequential(layers_for_m3_enc)
+
+lr=0.001
+opt = GradientDecsent(lr=lr)
 AE_model = AutoEncoder(seq_for_m3_enc, seq_for_m3, opt, loss,
                     label_feature=label_feature, batch_size=batch_size, n_epochs=n_epochs, clear_after_pred=False)
 
