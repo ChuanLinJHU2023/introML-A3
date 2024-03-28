@@ -27,7 +27,7 @@ print("the class labels are:", np.unique(df[10]))
 # For the following models
 input_size = df.shape[1] - 1
 output_size = 4
-lr = 0.01
+lr = 0.001
 n_epochs = 500
 batch_size = 50
 print("The input size is {}".format(input_size))

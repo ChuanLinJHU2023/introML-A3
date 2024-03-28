@@ -1,0 +1,138 @@
+C:\anaconda\python.exe D:/ML-A3/introML-A3/Dataset3_Car.py
+Car Dataset
+The original dataset is:
+          0      1      2     3      4     5      6
+0     vhigh  vhigh      2     2  small   low  unacc
+1     vhigh  vhigh      2     2  small   med  unacc
+2     vhigh  vhigh      2     2  small  high  unacc
+3     vhigh  vhigh      2     2    med   low  unacc
+4     vhigh  vhigh      2     2    med   med  unacc
+...     ...    ...    ...   ...    ...   ...    ...
+1723    low    low  5more  more    med   med   good
+1724    low    low  5more  more    med  high  vgood
+1725    low    low  5more  more    big   low  unacc
+1726    low    low  5more  more    big   med   good
+1727    low    low  5more  more    big  high  vgood
+
+[1728 rows x 7 columns]
+
+
+The processed dataset is:
+             0         1         2        3        4        5  6
+0     1.341253  1.341253 -1.341253 -1.22439 -1.22439 -1.22439  0
+1     1.341253  1.341253 -1.341253 -1.22439 -1.22439  0.00000  0
+2     1.341253  1.341253 -1.341253 -1.22439 -1.22439  1.22439  0
+3     1.341253  1.341253 -1.341253 -1.22439  0.00000 -1.22439  0
+4     1.341253  1.341253 -1.341253 -1.22439  0.00000  0.00000  0
+...        ...       ...       ...      ...      ...      ... ..
+1723 -1.341253 -1.341253  1.341253  1.22439  0.00000  0.00000  2
+1724 -1.341253 -1.341253  1.341253  1.22439  0.00000  1.22439  3
+1725 -1.341253 -1.341253  1.341253  1.22439  1.22439 -1.22439  0
+1726 -1.341253 -1.341253  1.341253  1.22439  1.22439  0.00000  2
+1727 -1.341253 -1.341253  1.341253  1.22439  1.22439  1.22439  3
+
+[1728 rows x 7 columns]
+
+
+The input size is 6
+The output size is 4
+The learning rate is 0.01
+The epoch number is 500
+The batch size is 50
+
+
+The hidden size for FNN are 20 and 10
+The hidden size for Autoencoder are 3 and 10
+This is the 0th 2-fold cross validation
+n of train dataset is 864
+n of test dataset is 864
+in fold 0 for predictor 0, we have 01Loss=255
+in fold 0 for predictor 1, we have 01Loss=154
+in fold 0 for predictor 2, we have 01Loss=154
+in fold 0 for predictor 3, we have 01Loss=84
+in fold 1 for predictor 0, we have 01Loss=257
+in fold 1 for predictor 1, we have 01Loss=128
+in fold 1 for predictor 2, we have 01Loss=128
+in fold 1 for predictor 3, we have 01Loss=39
+the validation for 0th predictor is [255, 257]
+the validation for 1th predictor is [154, 128]
+the validation for 2th predictor is [154, 128]
+the validation for 3th predictor is [84, 39]
+This is the 1th 2-fold cross validation
+n of train dataset is 864
+n of test dataset is 864
+in fold 0 for predictor 0, we have 01Loss=255
+in fold 0 for predictor 1, we have 01Loss=154
+in fold 0 for predictor 2, we have 01Loss=154
+in fold 0 for predictor 3, we have 01Loss=48
+in fold 1 for predictor 0, we have 01Loss=257
+in fold 1 for predictor 1, we have 01Loss=145
+in fold 1 for predictor 2, we have 01Loss=145
+in fold 1 for predictor 3, we have 01Loss=45
+the validation for 0th predictor is [255, 257]
+the validation for 1th predictor is [154, 145]
+the validation for 2th predictor is [154, 145]
+the validation for 3th predictor is [48, 45]
+This is the 2th 2-fold cross validation
+n of train dataset is 864
+n of test dataset is 864
+in fold 0 for predictor 0, we have 01Loss=255
+in fold 0 for predictor 1, we have 01Loss=149
+in fold 0 for predictor 2, we have 01Loss=149
+in fold 0 for predictor 3, we have 01Loss=39
+in fold 1 for predictor 0, we have 01Loss=257
+in fold 1 for predictor 1, we have 01Loss=141
+in fold 1 for predictor 2, we have 01Loss=141
+in fold 1 for predictor 3, we have 01Loss=51
+the validation for 0th predictor is [255, 257]
+the validation for 1th predictor is [149, 141]
+the validation for 2th predictor is [149, 141]
+the validation for 3th predictor is [39, 51]
+This is the 3th 2-fold cross validation
+n of train dataset is 864
+n of test dataset is 864
+in fold 0 for predictor 0, we have 01Loss=255
+in fold 0 for predictor 1, we have 01Loss=130
+in fold 0 for predictor 2, we have 01Loss=130
+in fold 0 for predictor 3, we have 01Loss=75
+in fold 1 for predictor 0, we have 01Loss=257
+in fold 1 for predictor 1, we have 01Loss=161
+in fold 1 for predictor 2, we have 01Loss=161
+in fold 1 for predictor 3, we have 01Loss=58
+the validation for 0th predictor is [255, 257]
+the validation for 1th predictor is [130, 161]
+the validation for 2th predictor is [130, 161]
+the validation for 3th predictor is [75, 58]
+This is the 4th 2-fold cross validation
+n of train dataset is 864
+n of test dataset is 864
+in fold 0 for predictor 0, we have 01Loss=255
+in fold 0 for predictor 1, we have 01Loss=149
+in fold 0 for predictor 2, we have 01Loss=149
+in fold 0 for predictor 3, we have 01Loss=59
+in fold 1 for predictor 0, we have 01Loss=257
+in fold 1 for predictor 1, we have 01Loss=151
+in fold 1 for predictor 2, we have 01Loss=151
+in fold 1 for predictor 3, we have 01Loss=49
+the validation for 0th predictor is [255, 257]
+the validation for 1th predictor is [149, 151]
+the validation for 2th predictor is [149, 151]
+the validation for 3th predictor is [59, 49]
+the final results for predictor 0 is:
+[255, 257, 255, 257, 255, 257, 255, 257, 255, 257]
+the mean is:
+256.0
+the final results for predictor 1 is:
+[154, 128, 154, 145, 149, 141, 130, 161, 149, 151]
+the mean is:
+146.2
+the final results for predictor 2 is:
+[154, 128, 154, 145, 149, 141, 130, 161, 149, 151]
+the mean is:
+146.2
+the final results for predictor 3 is:
+[84, 39, 48, 45, 39, 51, 75, 58, 59, 49]
+the mean is:
+54.7
+
+Process finished with exit code 0

@@ -1,0 +1,138 @@
+C:\anaconda\python.exe D:/ML-A3/introML-A3/Dataset6_Machine.py
+Machine Dataset
+The original dataset is:
+           0    2     3      4    5   6    7    8    9
+0    adviser  125   256   6000  256  16  128  198  199
+1     amdahl   29  8000  32000   32   8   32  269  253
+2     amdahl   29  8000  32000   32   8   32  220  253
+3     amdahl   29  8000  32000   32   8   32  172  253
+4     amdahl   29  8000  16000   32   8   16  132  132
+..       ...  ...   ...    ...  ...  ..  ...  ...  ...
+204   sperry  124  1000   8000    0   1    8   42   37
+205   sperry   98  1000   8000   32   2    8   46   50
+206   sratus  125  2000   8000    0   2   14   52   41
+207     wang  480   512   8000   32   0    0   67   47
+208     wang  480  1000   4000    0   0    0   45   25
+
+[209 rows x 9 columns]
+
+
+The processed dataset is:
+     0=adviser  0=amdahl  0=apollo  0=basf  ...         6         7    8         9
+0            1         0         0       0  ...  1.658008  4.220899  198  0.644041
+1            0         1         0       0  ...  0.484346  0.528211  269  0.992975
+2            0         1         0       0  ...  0.484346  0.528211  220  0.992975
+3            0         1         0       0  ...  0.484346  0.528211  172  0.992975
+4            0         1         0       0  ...  0.484346 -0.087238  132  0.211104
+..         ...       ...       ...     ...  ...       ...       ...  ...       ...
+204          0         0         0       0  ... -0.542608 -0.394962   42 -0.402761
+205          0         0         0       0  ... -0.395900 -0.394962   46 -0.318759
+206          0         0         0       0  ... -0.395900 -0.164169   52 -0.376914
+207          0         0         0       0  ... -0.689316 -0.702686   67 -0.338144
+208          0         0         0       0  ... -0.689316 -0.702686   45 -0.480302
+
+[209 rows x 38 columns]
+
+
+The input size is 37
+The output size is 1
+The learning rate is 0.001
+The epoch number is 500
+The batch size is 50
+
+
+The hidden size for FNN are 30 and 20
+The hidden size for Autoencoder are 20 and 30
+This is the 0th 2-fold cross validation
+n of train dataset is 105
+n of test dataset is 104
+in fold 0 for predictor 0, we have MSE=208.50196195005947
+in fold 0 for predictor 1, we have MSE=1510.8865138269662
+in fold 0 for predictor 2, we have MSE=1220.071825570112
+in fold 0 for predictor 3, we have MSE=1346.8687203129048
+in fold 1 for predictor 0, we have MSE=209.48181034482758
+in fold 1 for predictor 1, we have MSE=1430.6042348968663
+in fold 1 for predictor 2, we have MSE=1430.3521127337933
+in fold 1 for predictor 3, we have MSE=1287.7437053654075
+the validation for 0th predictor is [208.50196195005947, 209.48181034482758]
+the validation for 1th predictor is [1510.8865138269662, 1430.6042348968663]
+the validation for 2th predictor is [1220.071825570112, 1430.3521127337933]
+the validation for 3th predictor is [1346.8687203129048, 1287.7437053654075]
+This is the 1th 2-fold cross validation
+n of train dataset is 105
+n of test dataset is 104
+in fold 0 for predictor 0, we have MSE=208.5019619500594
+in fold 0 for predictor 1, we have MSE=1328.64534214047
+in fold 0 for predictor 2, we have MSE=1416.1559929445498
+in fold 0 for predictor 3, we have MSE=1339.498646582109
+in fold 1 for predictor 0, we have MSE=209.48181034482764
+in fold 1 for predictor 1, we have MSE=1327.2617393145395
+in fold 1 for predictor 2, we have MSE=1210.6586104151336
+in fold 1 for predictor 3, we have MSE=1290.6824154633646
+the validation for 0th predictor is [208.5019619500594, 209.48181034482764]
+the validation for 1th predictor is [1328.64534214047, 1327.2617393145395]
+the validation for 2th predictor is [1416.1559929445498, 1210.6586104151336]
+the validation for 3th predictor is [1339.498646582109, 1290.6824154633646]
+This is the 2th 2-fold cross validation
+n of train dataset is 105
+n of test dataset is 104
+in fold 0 for predictor 0, we have MSE=208.50196195005947
+in fold 0 for predictor 1, we have MSE=1435.3416834064942
+in fold 0 for predictor 2, we have MSE=1324.6933585193024
+in fold 0 for predictor 3, we have MSE=1337.442389759644
+in fold 1 for predictor 0, we have MSE=209.48181034482755
+in fold 1 for predictor 1, we have MSE=1337.2045724366074
+in fold 1 for predictor 2, we have MSE=1333.7019966875182
+in fold 1 for predictor 3, we have MSE=1291.4664237701818
+the validation for 0th predictor is [208.50196195005947, 209.48181034482755]
+the validation for 1th predictor is [1435.3416834064942, 1337.2045724366074]
+the validation for 2th predictor is [1324.6933585193024, 1333.7019966875182]
+the validation for 3th predictor is [1337.442389759644, 1291.4664237701818]
+This is the 3th 2-fold cross validation
+n of train dataset is 105
+n of test dataset is 104
+in fold 0 for predictor 0, we have MSE=208.50196195005947
+in fold 0 for predictor 1, we have MSE=1367.1331111589739
+in fold 0 for predictor 2, we have MSE=1343.9438336605272
+in fold 0 for predictor 3, we have MSE=1350.6449543272306
+in fold 1 for predictor 0, we have MSE=209.48181034482758
+in fold 1 for predictor 1, we have MSE=1182.2915736747773
+in fold 1 for predictor 2, we have MSE=1231.1820832028154
+in fold 1 for predictor 3, we have MSE=1293.0039908252884
+the validation for 0th predictor is [208.50196195005947, 209.48181034482758]
+the validation for 1th predictor is [1367.1331111589739, 1182.2915736747773]
+the validation for 2th predictor is [1343.9438336605272, 1231.1820832028154]
+the validation for 3th predictor is [1350.6449543272306, 1293.0039908252884]
+This is the 4th 2-fold cross validation
+n of train dataset is 105
+n of test dataset is 104
+in fold 0 for predictor 0, we have MSE=208.50196195005947
+in fold 0 for predictor 1, we have MSE=1388.7832935073434
+in fold 0 for predictor 2, we have MSE=1561.849138788272
+in fold 0 for predictor 3, we have MSE=1332.000931094908
+in fold 1 for predictor 0, we have MSE=209.4818103448276
+in fold 1 for predictor 1, we have MSE=1212.6989371651973
+in fold 1 for predictor 2, we have MSE=1289.0289119386323
+in fold 1 for predictor 3, we have MSE=1299.0927906126997
+the validation for 0th predictor is [208.50196195005947, 209.4818103448276]
+the validation for 1th predictor is [1388.7832935073434, 1212.6989371651973]
+the validation for 2th predictor is [1561.849138788272, 1289.0289119386323]
+the validation for 3th predictor is [1332.000931094908, 1299.0927906126997]
+the final results for predictor 0 is:
+[208.50196195005947, 209.48181034482758, 208.5019619500594, 209.48181034482764, 208.50196195005947, 209.48181034482755, 208.50196195005947, 209.48181034482758, 208.50196195005947, 209.4818103448276]
+the mean is:
+208.9918861474435
+the final results for predictor 1 is:
+[1510.8865138269662, 1430.6042348968663, 1328.64534214047, 1327.2617393145395, 1435.3416834064942, 1337.2045724366074, 1367.1331111589739, 1182.2915736747773, 1388.7832935073434, 1212.6989371651973]
+the mean is:
+1352.0851001528235
+the final results for predictor 2 is:
+[1220.071825570112, 1430.3521127337933, 1416.1559929445498, 1210.6586104151336, 1324.6933585193024, 1333.7019966875182, 1343.9438336605272, 1231.1820832028154, 1561.849138788272, 1289.0289119386323]
+the mean is:
+1336.1637864460656
+the final results for predictor 3 is:
+[1346.8687203129048, 1287.7437053654075, 1339.498646582109, 1290.6824154633646, 1337.442389759644, 1291.4664237701818, 1350.6449543272306, 1293.0039908252884, 1332.000931094908, 1299.0927906126997]
+the mean is:
+1316.844496811374
+
+Process finished with exit code 0
