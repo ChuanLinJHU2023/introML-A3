@@ -68,8 +68,8 @@ FNN_model = DNN(seq_for_m1, opt, loss, label_feature=label_feature, batch_size=b
 
 
 # Autoencoder Model (1 hidden layer for auto network and 2 hidden layers for predictor network)
-hidden_size1 = 8
-hidden_size2 = 12
+hidden_size1 = 10
+hidden_size2 = 20
 print("The hidden size for Autoencoder are {} and {}".format(hidden_size1, hidden_size2))
 assert hidden_size1<=input_size
 linear_layer1_for_m3 = Linear(input_size, hidden_size1)
