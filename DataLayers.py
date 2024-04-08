@@ -1,5 +1,7 @@
 import numpy as np
 from typing import List
+show_forward_propagation_process = True
+
 class Layer:
     def __init__(self, input_size, output_size):
         self.input_size=input_size
@@ -115,6 +117,7 @@ class Sequential:
         self.input_size = layers[0].input_size
         self.output_size = layers[-1].output_size
         self.check_layers()
+        self.show_forward_propagation_process = False
 
     def forward(self, input, need_reshape=False, need_decode=False):
         if need_reshape:
@@ -122,6 +125,18 @@ class Sequential:
         assert input.shape == (self.input_size, 1)
         intermediate = input
         for layer in self.layers:
+            if self.show_forward_propagation_process:
+                print("in layer {}".format(self.layers.index(layer)))
+                print("this is {} layer".format(type(layer).__name__))
+                print("the input is:")
+                print(intermediate)
+                print("the output is:")
+                print(layer.forward(intermediate))
+                print("The layer parameters are :")
+                if layer.params:
+                    for param in layer.params:
+                        print(param)
+                print("\n")
             intermediate = layer.forward(intermediate)
         output = intermediate
         assert output.shape == (self.output_size,1)

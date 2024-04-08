@@ -58,7 +58,7 @@ linear_layer3_for_m2 = Linear(hidden_size2, output_size)
 layers_for_m2 = [linear_layer1_for_m2, sigmoid_layer1_for_m2, linear_layer2_for_m2, sigmoid_layer2_for_m2,
                  linear_layer3_for_m2]
 seq_for_m2 = Sequential(layers_for_m2)
-FNN_model = DNN(seq_for_m1, opt, loss, label_feature=label_feature, batch_size=batch_size,
+FNN_model = DNN(seq_for_m2, opt, loss, label_feature=label_feature, batch_size=batch_size,
                 n_epochs=n_epochs, clear_after_pred=True, show_detials=False)
 
 

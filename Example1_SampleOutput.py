@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 from DataPreprocessing import *
@@ -5,30 +6,29 @@ from DataPredictors import *
 from DataLayers import *
 from DataValidators import *
 
-df: pd.DataFrame = data_loader("Datasets/car.data")
-print("Car Dataset")
+df=data_loader("Datasets/breast-cancer-wisconsin.data",missing_value_symbol="?",idCol=0)
+print("House Dataset")
+df=data_loader("Datasets/house-votes-84.data")
 print("The original dataset is:")
-print(df, "\n\n")
-df = data_encode(df, 0, "o", ["low", "med", "high", "vhigh"])
-df = data_encode(df, 1, "o", ["low", "med", "high", "vhigh"])
-df = data_encode(df, 2, "o", ["2", "3", "4", "5more"])
-df = data_encode(df, 3, "o", ["2", "4", "more"])
-df = data_encode(df, 4, "o", ["small", "med", "big"])
-df = data_encode(df, 5, "o", ["low", "med", "high"])
-df = data_encode(df, 6, "o", ["unacc", "acc", "good", "vgood"])
-features=list(df.columns)[:-1]
-df=data_standardizer(df,features)
+print(df,"\n\n")
+for i in range(1,17):
+    df=data_encode(df,i,"o",["n","?","y"])
+df = data_label_rename(df,0)
+df=data_standardizer(df,list(range(1,17)))
 print("The processed dataset is:")
-print(df, "\n\n")
-label_feature = 6
+print(df,"\n\n")
+label_feature = 0
 type = "c"
 metric = "MSE" if type == "r" else "01Loss"
+print("the class labels are:", np.unique(df[10]))
+print("the shape of df is ",df.shape)
+# print("the shape of df is ",df.iloc[:,1:].shape)
 
 
 # For the following models
 input_size = df.shape[1] - 1
 output_size = 4
-lr = 0.01
+lr = 0.001
 n_epochs = 500
 batch_size = 50
 print("The input size is {}".format(input_size))
@@ -69,8 +69,8 @@ FNN_model = DNN(seq_for_m2, opt, loss, label_feature=label_feature, batch_size=b
 
 
 # Autoencoder Model (1 hidden layer for auto network and 2 hidden layers for predictor network)
-hidden_size1 = 5
-hidden_size2 = 10
+hidden_size1 = 10
+hidden_size2 = 20
 print("The hidden size for Autoencoder are {} and {}".format(hidden_size1, hidden_size2))
 assert hidden_size1<=input_size
 linear_layer1_for_m3 = Linear(input_size, hidden_size1)
@@ -85,9 +85,34 @@ seq_for_m3 = Sequential(layers_for_m3)
 linear_layer4_for_m3 = Linear(hidden_size1, input_size)
 layers_for_m3_enc = [linear_layer1_for_m3, sigmoid_layer1_for_m3, linear_layer4_for_m3]
 seq_for_m3_enc =Sequential(layers_for_m3_enc)
-AE_model = AutoEncoder(seq_for_m3_enc, seq_for_m3, opt, loss,
-                    label_feature=label_feature, batch_size=batch_size, n_epochs=n_epochs, clear_after_pred=False)
 
+lr=0.001
+opt = GradientDecsent(lr=lr)
+AE_model = AutoEncoder(seq_for_m3_enc, seq_for_m3, opt, loss,
+                    label_feature=label_feature, batch_size=batch_size, n_epochs=n_epochs, clear_after_pred=True, show_details=False)
+
+
+
+
+# Here is the experiment
 predictors = [null_model, linear_model, FNN_model, AE_model]
-validator = KByTwoValidatorMultiple(predictors, k=5, evaluation_metric=metric)
-validator.validate(df, show_detail=True, show_more_detail=True)
+ratio_list=[50,50]
+df80, df20=data_partitioner(df,ratioList=ratio_list)
+linear_model.fit(df80)
+FNN_model.fit(df80)
+AE_model.fit(df80)
+prediction1 = linear_model.predict(df20)
+prediction2 = FNN_model.predict(df20)
+prediction3 = AE_model.predict(df20)
+df20["LM"] = prediction1
+df20["FNN"] = prediction2
+df20["AE"] = prediction3
+print("Here is the sample output:")
+print(df20)
+
+
+
+
+
+
+

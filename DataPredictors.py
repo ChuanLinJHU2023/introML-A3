@@ -104,6 +104,12 @@ class DNN:
             print(ys)
         return ys
 
+    def predict_for_single_data_point(self, dp: pd.Series):
+        dp = dp.drop(self.label_feature_index)
+        dp = np.array(dp)
+        predicted = self.seq.forward(dp, need_reshape=True, need_decode=self.whether_decode)
+        return predicted
+
     def get_label_feature(self):
         return self.label_feature
 
@@ -201,6 +207,18 @@ class AutoEncoder:
             print("the predictions are as follows:")
             print(ys)
         return ys
+
+    def predict_for_single_data_point(self, dp: pd.Series):
+        dp = dp.drop(self.label_feature_index)
+        dp = np.array(dp)
+        predicted = self.seq.forward(dp, need_reshape=True, need_decode=self.whether_decode)
+        return predicted
+
+    def recover_single_data_point(self, dp: pd.Series):
+        dp = dp.drop(self.label_feature_index)
+        dp = np.array(dp)
+        predicted = self.seq_enc.forward(dp, need_reshape=True, need_decode=False)
+        return predicted
 
     def check_encoder_and_predictor(self):
         assert self.seq_enc.output_size == self.seq_enc.input_size

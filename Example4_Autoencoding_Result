@@ -1,0 +1,89 @@
+/Users/linchuan/opt/anaconda3/bin/python /Users/linchuan/JHU-ML/introML-A3/Example4_Autoencoding.py
+House Dataset
+The original dataset is:
+             0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16
+0    republican  n  y  n  y  y  y  n  n  n  y  ?  y  y  y  n  y
+1    republican  n  y  n  y  y  y  n  n  n  n  n  y  y  y  n  ?
+2      democrat  ?  y  y  ?  y  y  n  n  n  n  y  n  y  y  n  n
+3      democrat  n  y  y  n  ?  y  n  n  n  n  y  n  y  n  n  y
+4      democrat  y  y  y  n  y  y  n  n  n  n  y  ?  y  y  y  y
+..          ... .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+430  republican  n  n  y  y  y  y  n  n  y  y  n  y  y  y  n  y
+431    democrat  n  n  y  n  n  n  y  y  y  y  n  n  n  n  n  y
+432  republican  n  ?  n  y  y  y  n  n  n  n  y  y  y  y  n  y
+433  republican  n  n  n  y  y  y  ?  ?  ?  ?  n  y  y  y  n  y
+434  republican  n  y  n  y  y  y  n  n  n  y  n  y  y  y  ?  n
+
+[435 rows x 17 columns]
+
+
+The processed dataset is:
+     0         1         2         3   ...        13        14        15        16
+0     1 -0.904742  1.051709 -1.224976  ...  1.010112  0.850601 -0.901484  0.716114
+1     1 -0.904742  1.051709 -1.224976  ...  1.010112  0.850601 -0.901484 -0.650156
+2     0  0.114851  1.051709  0.836395  ...  1.010112  0.850601 -0.901484 -2.016426
+3     0 -0.904742  1.051709  0.836395  ...  1.010112 -1.222292 -0.901484  0.716114
+4     0  1.134444  1.051709  0.836395  ...  1.010112  0.850601  1.184397  0.716114
+..   ..       ...       ...       ...  ...       ...       ...       ...       ...
+430   1 -0.904742 -1.066316  0.836395  ...  1.010112  0.850601 -0.901484  0.716114
+431   0 -0.904742 -1.066316  0.836395  ... -1.047962 -1.222292 -0.901484  0.716114
+432   1 -0.904742 -0.007304 -1.224976  ...  1.010112  0.850601 -0.901484  0.716114
+433   1 -0.904742 -1.066316 -1.224976  ...  1.010112  0.850601 -0.901484  0.716114
+434   1 -0.904742  1.051709 -1.224976  ...  1.010112  0.850601  0.141456 -2.016426
+
+[435 rows x 17 columns]
+
+
+the class labels are: [-1.01628825 -0.00926003  0.99776819]
+the shape of df is  (435, 17)
+The input size is 16
+The output size is 4
+The learning rate is 0.001
+The epoch number is 1000
+The batch size is 50
+
+
+The hidden size for Autoencoder are 10 and 20
+Here is the sample:
+0     0.000000
+1     1.134444
+2    -0.007304
+3     0.836395
+4    -0.860424
+5    -1.025922
+6    -1.344366
+7     0.890212
+8     0.876857
+9     1.022755
+10   -1.016288
+11   -0.784377
+12    0.149369
+13   -1.047962
+14   -1.222292
+15    1.184397
+16    0.716114
+Name: 22, dtype: float64
+
+
+
+Here is the sample recover:
+0     0.000000
+1     1.140536
+2     0.024358
+3     0.493499
+4    -0.738119
+5    -0.985118
+6    -1.377362
+7     1.140458
+8     0.966749
+9     0.922788
+10   -1.077231
+11   -0.749405
+12   -0.513664
+13   -0.985916
+14   -1.064178
+15    1.176395
+16    0.872593
+dtype: float64
+
+Process finished with exit code 0
