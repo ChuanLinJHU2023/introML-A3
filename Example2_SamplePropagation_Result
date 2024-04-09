@@ -43,10 +43,6 @@ The epoch number is 500
 The batch size is 50
 
 
-The hidden size for FNN are 20 and 10
-5
-The hidden size for Autoencoder are 10 and 20
-
 
 
 
@@ -125,6 +121,7 @@ The layer parameters are :
 
 
 The is FNN
+The hidden size for FNN are 20 and 10
 in layer 0
 this is Linear layer
 the input is:
@@ -448,6 +445,7 @@ The layer parameters are :
 
 
 The is AE
+The hidden size for Autoencoder are 10 and 20
 in layer 0
 this is Linear layer
 the input is:

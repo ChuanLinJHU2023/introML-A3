@@ -48,33 +48,6 @@ The hidden size for FNN are 20 and 10
 The hidden size for Autoencoder are 10 and 20
 
 
-
-
-
-the data point is:
-0     0.000000
-1     1.134444
-2     1.051709
-3     0.836395
-4    -0.860424
-5    -1.025922
-6    -1.344366
-7     0.890212
-8     0.876857
-9     1.022755
-10   -1.016288
-11   -0.784377
-12   -0.898620
-13   -1.047962
-14   -1.222292
-15    1.184397
-16    0.716114
-Name: 69, dtype: float64
-
-
-
-
-
 The is LM
 in layer 0
 this is Linear layer

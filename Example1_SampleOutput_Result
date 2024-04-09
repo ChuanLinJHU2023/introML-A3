@@ -34,8 +34,6 @@ The processed dataset is:
 [435 rows x 17 columns]
 
 
-the class labels are: [-1.01628825 -0.00926003  0.99776819]
-the shape of df is  (435, 17)
 The input size is 16
 The output size is 4
 The learning rate is 0.001

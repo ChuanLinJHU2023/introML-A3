@@ -95,7 +95,7 @@ AE_model = AutoEncoder(seq_for_m3_enc, seq_for_m3, opt, loss,
 
 
 # Here is the experiment
-predictors = [null_model, linear_model, FNN_model, AE_model]
+predictors = [linear_model, FNN_model, AE_model]
 ratio_list=[50,50]
 df80, df20=data_partitioner(df,ratioList=ratio_list)
 linear_model.fit(df80)
