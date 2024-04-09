@@ -1,6 +1,8 @@
-C:\anaconda\python.exe D:/ML-A3/introML-A3/Dataset5_House.py
+C:\ProgramData\anaconda3\python.exe "C:\Github Desktop\introML-A3\Dataset5_House.py"
 House Dataset
 The original dataset is:
+C:\Github Desktop\introML-A3\DataPreprocessing.py:11: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  df = df.applymap(f)
              0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16
 0    republican  n  y  n  y  y  y  n  n  n  y  ?  y  y  y  n  y
 1    republican  n  y  n  y  y  y  n  n  n  n  n  y  y  y  n  ?
@@ -43,53 +45,23 @@ The batch size is 50
 
 
 The hidden size for FNN are 20 and 10
-The hidden size for Autoencoder are 8 and 12
+The hidden size for Autoencoder are 10 and 20
 This is the 0th 2-fold cross validation
 n of train dataset is 218
 n of test dataset is 217
 in fold 0 for predictor 0, we have 01Loss=83
-in fold 0 for predictor 1, we have 01Loss=14
-in fold 0 for predictor 2, we have 01Loss=14
-in fold 0 for predictor 3, we have 01Loss=14
+in fold 0 for predictor 1, we have 01Loss=15
+in fold 0 for predictor 2, we have 01Loss=12
+in fold 0 for predictor 3, we have 01Loss=13
 in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=8
-in fold 1 for predictor 2, we have 01Loss=8
+in fold 1 for predictor 1, we have 01Loss=9
+in fold 1 for predictor 2, we have 01Loss=10
 in fold 1 for predictor 3, we have 01Loss=8
 the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [14, 8]
-the validation for 2th predictor is [14, 8]
-the validation for 3th predictor is [14, 8]
+the validation for 1th predictor is [15, 9]
+the validation for 2th predictor is [12, 10]
+the validation for 3th predictor is [13, 8]
 This is the 1th 2-fold cross validation
-n of train dataset is 218
-n of test dataset is 217
-in fold 0 for predictor 0, we have 01Loss=83
-in fold 0 for predictor 1, we have 01Loss=6
-in fold 0 for predictor 2, we have 01Loss=5
-in fold 0 for predictor 3, we have 01Loss=7
-in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=14
-in fold 1 for predictor 2, we have 01Loss=10
-in fold 1 for predictor 3, we have 01Loss=11
-the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [6, 14]
-the validation for 2th predictor is [5, 10]
-the validation for 3th predictor is [7, 11]
-This is the 2th 2-fold cross validation
-n of train dataset is 218
-n of test dataset is 217
-in fold 0 for predictor 0, we have 01Loss=83
-in fold 0 for predictor 1, we have 01Loss=18
-in fold 0 for predictor 2, we have 01Loss=15
-in fold 0 for predictor 3, we have 01Loss=14
-in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=10
-in fold 1 for predictor 2, we have 01Loss=10
-in fold 1 for predictor 3, we have 01Loss=9
-the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [18, 10]
-the validation for 2th predictor is [15, 10]
-the validation for 3th predictor is [14, 9]
-This is the 3th 2-fold cross validation
 n of train dataset is 218
 n of test dataset is 217
 in fold 0 for predictor 0, we have 01Loss=83
@@ -97,43 +69,73 @@ in fold 0 for predictor 1, we have 01Loss=9
 in fold 0 for predictor 2, we have 01Loss=12
 in fold 0 for predictor 3, we have 01Loss=9
 in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=16
-in fold 1 for predictor 2, we have 01Loss=15
-in fold 1 for predictor 3, we have 01Loss=13
+in fold 1 for predictor 1, we have 01Loss=11
+in fold 1 for predictor 2, we have 01Loss=13
+in fold 1 for predictor 3, we have 01Loss=10
 the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [9, 16]
-the validation for 2th predictor is [12, 15]
-the validation for 3th predictor is [9, 13]
-This is the 4th 2-fold cross validation
+the validation for 1th predictor is [9, 11]
+the validation for 2th predictor is [12, 13]
+the validation for 3th predictor is [9, 10]
+This is the 2th 2-fold cross validation
 n of train dataset is 218
 n of test dataset is 217
 in fold 0 for predictor 0, we have 01Loss=83
 in fold 0 for predictor 1, we have 01Loss=11
+in fold 0 for predictor 2, we have 01Loss=9
+in fold 0 for predictor 3, we have 01Loss=11
+in fold 1 for predictor 0, we have 01Loss=83
+in fold 1 for predictor 1, we have 01Loss=8
+in fold 1 for predictor 2, we have 01Loss=11
+in fold 1 for predictor 3, we have 01Loss=12
+the validation for 0th predictor is [83, 83]
+the validation for 1th predictor is [11, 8]
+the validation for 2th predictor is [9, 11]
+the validation for 3th predictor is [11, 12]
+This is the 3th 2-fold cross validation
+n of train dataset is 218
+n of test dataset is 217
+in fold 0 for predictor 0, we have 01Loss=83
+in fold 0 for predictor 1, we have 01Loss=10
 in fold 0 for predictor 2, we have 01Loss=10
 in fold 0 for predictor 3, we have 01Loss=9
 in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=6
-in fold 1 for predictor 2, we have 01Loss=11
-in fold 1 for predictor 3, we have 01Loss=15
+in fold 1 for predictor 1, we have 01Loss=8
+in fold 1 for predictor 2, we have 01Loss=9
+in fold 1 for predictor 3, we have 01Loss=9
 the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [11, 6]
-the validation for 2th predictor is [10, 11]
-the validation for 3th predictor is [9, 15]
+the validation for 1th predictor is [10, 8]
+the validation for 2th predictor is [10, 9]
+the validation for 3th predictor is [9, 9]
+This is the 4th 2-fold cross validation
+n of train dataset is 218
+n of test dataset is 217
+in fold 0 for predictor 0, we have 01Loss=83
+in fold 0 for predictor 1, we have 01Loss=8
+in fold 0 for predictor 2, we have 01Loss=11
+in fold 0 for predictor 3, we have 01Loss=9
+in fold 1 for predictor 0, we have 01Loss=83
+in fold 1 for predictor 1, we have 01Loss=15
+in fold 1 for predictor 2, we have 01Loss=17
+in fold 1 for predictor 3, we have 01Loss=10
+the validation for 0th predictor is [83, 83]
+the validation for 1th predictor is [8, 15]
+the validation for 2th predictor is [11, 17]
+the validation for 3th predictor is [9, 10]
 the final results for predictor 0 is:
 [83, 83, 83, 83, 83, 83, 83, 83, 83, 83]
 the mean is:
 83.0
 the final results for predictor 1 is:
-[14, 8, 6, 14, 18, 10, 9, 16, 11, 6]
+[15, 9, 9, 11, 11, 8, 10, 8, 8, 15]
 the mean is:
-11.2
+10.4
 the final results for predictor 2 is:
-[14, 8, 5, 10, 15, 10, 12, 15, 10, 11]
+[12, 10, 12, 13, 9, 11, 10, 9, 11, 17]
 the mean is:
-11.0
+11.4
 the final results for predictor 3 is:
-[14, 8, 7, 11, 14, 9, 9, 13, 9, 15]
+[13, 8, 9, 10, 11, 12, 9, 9, 9, 10]
 the mean is:
-10.9
+10.0
 
 Process finished with exit code 0

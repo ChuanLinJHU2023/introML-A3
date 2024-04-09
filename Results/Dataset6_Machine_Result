@@ -1,4 +1,4 @@
-C:\anaconda\python.exe D:/ML-A3/introML-A3/Dataset6_Machine.py
+C:\ProgramData\anaconda3\python.exe "C:\Github Desktop\introML-A3\Dataset6_Machine.py"
 Machine Dataset
 The original dataset is:
            0    2     3      4    5   6    7    8    9
@@ -47,92 +47,92 @@ This is the 0th 2-fold cross validation
 n of train dataset is 105
 n of test dataset is 104
 in fold 0 for predictor 0, we have MSE=208.50196195005947
-in fold 0 for predictor 1, we have MSE=1510.8865138269662
-in fold 0 for predictor 2, we have MSE=1220.071825570112
-in fold 0 for predictor 3, we have MSE=1346.8687203129048
+in fold 0 for predictor 1, we have MSE=1422.8620303862485
+in fold 0 for predictor 2, we have MSE=1410.5894183354615
+in fold 0 for predictor 3, we have MSE=1885.0507226349087
 in fold 1 for predictor 0, we have MSE=209.48181034482758
-in fold 1 for predictor 1, we have MSE=1430.6042348968663
-in fold 1 for predictor 2, we have MSE=1430.3521127337933
-in fold 1 for predictor 3, we have MSE=1287.7437053654075
+in fold 1 for predictor 1, we have MSE=1269.8823310659795
+in fold 1 for predictor 2, we have MSE=1416.5137722092738
+in fold 1 for predictor 3, we have MSE=1822.9510608846758
 the validation for 0th predictor is [208.50196195005947, 209.48181034482758]
-the validation for 1th predictor is [1510.8865138269662, 1430.6042348968663]
-the validation for 2th predictor is [1220.071825570112, 1430.3521127337933]
-the validation for 3th predictor is [1346.8687203129048, 1287.7437053654075]
+the validation for 1th predictor is [1422.8620303862485, 1269.8823310659795]
+the validation for 2th predictor is [1410.5894183354615, 1416.5137722092738]
+the validation for 3th predictor is [1885.0507226349087, 1822.9510608846758]
 This is the 1th 2-fold cross validation
 n of train dataset is 105
 n of test dataset is 104
-in fold 0 for predictor 0, we have MSE=208.5019619500594
-in fold 0 for predictor 1, we have MSE=1328.64534214047
-in fold 0 for predictor 2, we have MSE=1416.1559929445498
-in fold 0 for predictor 3, we have MSE=1339.498646582109
-in fold 1 for predictor 0, we have MSE=209.48181034482764
-in fold 1 for predictor 1, we have MSE=1327.2617393145395
-in fold 1 for predictor 2, we have MSE=1210.6586104151336
-in fold 1 for predictor 3, we have MSE=1290.6824154633646
-the validation for 0th predictor is [208.5019619500594, 209.48181034482764]
-the validation for 1th predictor is [1328.64534214047, 1327.2617393145395]
-the validation for 2th predictor is [1416.1559929445498, 1210.6586104151336]
-the validation for 3th predictor is [1339.498646582109, 1290.6824154633646]
+in fold 0 for predictor 0, we have MSE=208.50196195005947
+in fold 0 for predictor 1, we have MSE=1284.227769556598
+in fold 0 for predictor 2, we have MSE=1363.076341587108
+in fold 0 for predictor 3, we have MSE=1873.2507961867752
+in fold 1 for predictor 0, we have MSE=209.48181034482758
+in fold 1 for predictor 1, we have MSE=1317.853033326433
+in fold 1 for predictor 2, we have MSE=1187.0348670247492
+in fold 1 for predictor 3, we have MSE=1819.5730227390502
+the validation for 0th predictor is [208.50196195005947, 209.48181034482758]
+the validation for 1th predictor is [1284.227769556598, 1317.853033326433]
+the validation for 2th predictor is [1363.076341587108, 1187.0348670247492]
+the validation for 3th predictor is [1873.2507961867752, 1819.5730227390502]
 This is the 2th 2-fold cross validation
 n of train dataset is 105
 n of test dataset is 104
 in fold 0 for predictor 0, we have MSE=208.50196195005947
-in fold 0 for predictor 1, we have MSE=1435.3416834064942
-in fold 0 for predictor 2, we have MSE=1324.6933585193024
-in fold 0 for predictor 3, we have MSE=1337.442389759644
-in fold 1 for predictor 0, we have MSE=209.48181034482755
-in fold 1 for predictor 1, we have MSE=1337.2045724366074
-in fold 1 for predictor 2, we have MSE=1333.7019966875182
-in fold 1 for predictor 3, we have MSE=1291.4664237701818
-the validation for 0th predictor is [208.50196195005947, 209.48181034482755]
-the validation for 1th predictor is [1435.3416834064942, 1337.2045724366074]
-the validation for 2th predictor is [1324.6933585193024, 1333.7019966875182]
-the validation for 3th predictor is [1337.442389759644, 1291.4664237701818]
+in fold 0 for predictor 1, we have MSE=1343.3941434753801
+in fold 0 for predictor 2, we have MSE=1442.5535125100132
+in fold 0 for predictor 3, we have MSE=1871.2763017711463
+in fold 1 for predictor 0, we have MSE=209.4818103448276
+in fold 1 for predictor 1, we have MSE=1330.069798567515
+in fold 1 for predictor 2, we have MSE=1683.7154480477054
+in fold 1 for predictor 3, we have MSE=1816.4981754218766
+the validation for 0th predictor is [208.50196195005947, 209.4818103448276]
+the validation for 1th predictor is [1343.3941434753801, 1330.069798567515]
+the validation for 2th predictor is [1442.5535125100132, 1683.7154480477054]
+the validation for 3th predictor is [1871.2763017711463, 1816.4981754218766]
 This is the 3th 2-fold cross validation
 n of train dataset is 105
 n of test dataset is 104
-in fold 0 for predictor 0, we have MSE=208.50196195005947
-in fold 0 for predictor 1, we have MSE=1367.1331111589739
-in fold 0 for predictor 2, we have MSE=1343.9438336605272
-in fold 0 for predictor 3, we have MSE=1350.6449543272306
-in fold 1 for predictor 0, we have MSE=209.48181034482758
-in fold 1 for predictor 1, we have MSE=1182.2915736747773
-in fold 1 for predictor 2, we have MSE=1231.1820832028154
-in fold 1 for predictor 3, we have MSE=1293.0039908252884
-the validation for 0th predictor is [208.50196195005947, 209.48181034482758]
-the validation for 1th predictor is [1367.1331111589739, 1182.2915736747773]
-the validation for 2th predictor is [1343.9438336605272, 1231.1820832028154]
-the validation for 3th predictor is [1350.6449543272306, 1293.0039908252884]
+in fold 0 for predictor 0, we have MSE=208.5019619500594
+in fold 0 for predictor 1, we have MSE=1581.438609193454
+in fold 0 for predictor 2, we have MSE=1165.118593386705
+in fold 0 for predictor 3, we have MSE=1860.4436651177264
+in fold 1 for predictor 0, we have MSE=209.48181034482764
+in fold 1 for predictor 1, we have MSE=1282.263467934317
+in fold 1 for predictor 2, we have MSE=1362.3639383494335
+in fold 1 for predictor 3, we have MSE=1830.5695696068535
+the validation for 0th predictor is [208.5019619500594, 209.48181034482764]
+the validation for 1th predictor is [1581.438609193454, 1282.263467934317]
+the validation for 2th predictor is [1165.118593386705, 1362.3639383494335]
+the validation for 3th predictor is [1860.4436651177264, 1830.5695696068535]
 This is the 4th 2-fold cross validation
 n of train dataset is 105
 n of test dataset is 104
 in fold 0 for predictor 0, we have MSE=208.50196195005947
-in fold 0 for predictor 1, we have MSE=1388.7832935073434
-in fold 0 for predictor 2, we have MSE=1561.849138788272
-in fold 0 for predictor 3, we have MSE=1332.000931094908
-in fold 1 for predictor 0, we have MSE=209.4818103448276
-in fold 1 for predictor 1, we have MSE=1212.6989371651973
-in fold 1 for predictor 2, we have MSE=1289.0289119386323
-in fold 1 for predictor 3, we have MSE=1299.0927906126997
-the validation for 0th predictor is [208.50196195005947, 209.4818103448276]
-the validation for 1th predictor is [1388.7832935073434, 1212.6989371651973]
-the validation for 2th predictor is [1561.849138788272, 1289.0289119386323]
-the validation for 3th predictor is [1332.000931094908, 1299.0927906126997]
+in fold 0 for predictor 1, we have MSE=1331.489555603493
+in fold 0 for predictor 2, we have MSE=1320.0465899112774
+in fold 0 for predictor 3, we have MSE=1873.6551876212689
+in fold 1 for predictor 0, we have MSE=209.48181034482764
+in fold 1 for predictor 1, we have MSE=1158.243198931875
+in fold 1 for predictor 2, we have MSE=1374.395605536932
+in fold 1 for predictor 3, we have MSE=1829.3757458240607
+the validation for 0th predictor is [208.50196195005947, 209.48181034482764]
+the validation for 1th predictor is [1331.489555603493, 1158.243198931875]
+the validation for 2th predictor is [1320.0465899112774, 1374.395605536932]
+the validation for 3th predictor is [1873.6551876212689, 1829.3757458240607]
 the final results for predictor 0 is:
-[208.50196195005947, 209.48181034482758, 208.5019619500594, 209.48181034482764, 208.50196195005947, 209.48181034482755, 208.50196195005947, 209.48181034482758, 208.50196195005947, 209.4818103448276]
+[208.50196195005947, 209.48181034482758, 208.50196195005947, 209.48181034482758, 208.50196195005947, 209.4818103448276, 208.5019619500594, 209.48181034482764, 208.50196195005947, 209.48181034482764]
 the mean is:
-208.9918861474435
+208.99188614744352
 the final results for predictor 1 is:
-[1510.8865138269662, 1430.6042348968663, 1328.64534214047, 1327.2617393145395, 1435.3416834064942, 1337.2045724366074, 1367.1331111589739, 1182.2915736747773, 1388.7832935073434, 1212.6989371651973]
+[1422.8620303862485, 1269.8823310659795, 1284.227769556598, 1317.853033326433, 1343.3941434753801, 1330.069798567515, 1581.438609193454, 1282.263467934317, 1331.489555603493, 1158.243198931875]
 the mean is:
-1352.0851001528235
+1332.1723938041293
 the final results for predictor 2 is:
-[1220.071825570112, 1430.3521127337933, 1416.1559929445498, 1210.6586104151336, 1324.6933585193024, 1333.7019966875182, 1343.9438336605272, 1231.1820832028154, 1561.849138788272, 1289.0289119386323]
+[1410.5894183354615, 1416.5137722092738, 1363.076341587108, 1187.0348670247492, 1442.5535125100132, 1683.7154480477054, 1165.118593386705, 1362.3639383494335, 1320.0465899112774, 1374.395605536932]
 the mean is:
-1336.1637864460656
+1372.540808689866
 the final results for predictor 3 is:
-[1346.8687203129048, 1287.7437053654075, 1339.498646582109, 1290.6824154633646, 1337.442389759644, 1291.4664237701818, 1350.6449543272306, 1293.0039908252884, 1332.000931094908, 1299.0927906126997]
+[1885.0507226349087, 1822.9510608846758, 1873.2507961867752, 1819.5730227390502, 1871.2763017711463, 1816.4981754218766, 1860.4436651177264, 1830.5695696068535, 1873.6551876212689, 1829.3757458240607]
 the mean is:
-1316.844496811374
+1848.2644247808344
 
 Process finished with exit code 0

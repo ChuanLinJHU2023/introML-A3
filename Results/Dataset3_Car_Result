@@ -1,4 +1,4 @@
-C:\anaconda\python.exe D:/ML-A3/introML-A3/Dataset3_Car.py
+C:\ProgramData\anaconda3\python.exe "C:\Github Desktop\introML-A3\Dataset3_Car.py"
 Car Dataset
 The original dataset is:
           0      1      2     3      4     5      6
@@ -42,97 +42,97 @@ The batch size is 50
 
 
 The hidden size for FNN are 20 and 10
-The hidden size for Autoencoder are 3 and 10
+The hidden size for Autoencoder are 5 and 10
 This is the 0th 2-fold cross validation
 n of train dataset is 864
 n of test dataset is 864
 in fold 0 for predictor 0, we have 01Loss=255
-in fold 0 for predictor 1, we have 01Loss=154
-in fold 0 for predictor 2, we have 01Loss=154
-in fold 0 for predictor 3, we have 01Loss=84
+in fold 0 for predictor 1, we have 01Loss=146
+in fold 0 for predictor 2, we have 01Loss=8
+in fold 0 for predictor 3, we have 01Loss=36
 in fold 1 for predictor 0, we have 01Loss=257
-in fold 1 for predictor 1, we have 01Loss=128
-in fold 1 for predictor 2, we have 01Loss=128
-in fold 1 for predictor 3, we have 01Loss=39
+in fold 1 for predictor 1, we have 01Loss=152
+in fold 1 for predictor 2, we have 01Loss=27
+in fold 1 for predictor 3, we have 01Loss=45
 the validation for 0th predictor is [255, 257]
-the validation for 1th predictor is [154, 128]
-the validation for 2th predictor is [154, 128]
-the validation for 3th predictor is [84, 39]
+the validation for 1th predictor is [146, 152]
+the validation for 2th predictor is [8, 27]
+the validation for 3th predictor is [36, 45]
 This is the 1th 2-fold cross validation
 n of train dataset is 864
 n of test dataset is 864
 in fold 0 for predictor 0, we have 01Loss=255
-in fold 0 for predictor 1, we have 01Loss=154
-in fold 0 for predictor 2, we have 01Loss=154
-in fold 0 for predictor 3, we have 01Loss=48
+in fold 0 for predictor 1, we have 01Loss=145
+in fold 0 for predictor 2, we have 01Loss=15
+in fold 0 for predictor 3, we have 01Loss=30
 in fold 1 for predictor 0, we have 01Loss=257
-in fold 1 for predictor 1, we have 01Loss=145
-in fold 1 for predictor 2, we have 01Loss=145
-in fold 1 for predictor 3, we have 01Loss=45
+in fold 1 for predictor 1, we have 01Loss=153
+in fold 1 for predictor 2, we have 01Loss=21
+in fold 1 for predictor 3, we have 01Loss=33
 the validation for 0th predictor is [255, 257]
-the validation for 1th predictor is [154, 145]
-the validation for 2th predictor is [154, 145]
-the validation for 3th predictor is [48, 45]
+the validation for 1th predictor is [145, 153]
+the validation for 2th predictor is [15, 21]
+the validation for 3th predictor is [30, 33]
 This is the 2th 2-fold cross validation
 n of train dataset is 864
 n of test dataset is 864
 in fold 0 for predictor 0, we have 01Loss=255
-in fold 0 for predictor 1, we have 01Loss=149
-in fold 0 for predictor 2, we have 01Loss=149
-in fold 0 for predictor 3, we have 01Loss=39
+in fold 0 for predictor 1, we have 01Loss=153
+in fold 0 for predictor 2, we have 01Loss=15
+in fold 0 for predictor 3, we have 01Loss=36
 in fold 1 for predictor 0, we have 01Loss=257
-in fold 1 for predictor 1, we have 01Loss=141
-in fold 1 for predictor 2, we have 01Loss=141
-in fold 1 for predictor 3, we have 01Loss=51
+in fold 1 for predictor 1, we have 01Loss=158
+in fold 1 for predictor 2, we have 01Loss=14
+in fold 1 for predictor 3, we have 01Loss=29
 the validation for 0th predictor is [255, 257]
-the validation for 1th predictor is [149, 141]
-the validation for 2th predictor is [149, 141]
-the validation for 3th predictor is [39, 51]
+the validation for 1th predictor is [153, 158]
+the validation for 2th predictor is [15, 14]
+the validation for 3th predictor is [36, 29]
 This is the 3th 2-fold cross validation
 n of train dataset is 864
 n of test dataset is 864
 in fold 0 for predictor 0, we have 01Loss=255
-in fold 0 for predictor 1, we have 01Loss=130
-in fold 0 for predictor 2, we have 01Loss=130
-in fold 0 for predictor 3, we have 01Loss=75
+in fold 0 for predictor 1, we have 01Loss=156
+in fold 0 for predictor 2, we have 01Loss=30
+in fold 0 for predictor 3, we have 01Loss=34
 in fold 1 for predictor 0, we have 01Loss=257
-in fold 1 for predictor 1, we have 01Loss=161
-in fold 1 for predictor 2, we have 01Loss=161
-in fold 1 for predictor 3, we have 01Loss=58
+in fold 1 for predictor 1, we have 01Loss=141
+in fold 1 for predictor 2, we have 01Loss=14
+in fold 1 for predictor 3, we have 01Loss=27
 the validation for 0th predictor is [255, 257]
-the validation for 1th predictor is [130, 161]
-the validation for 2th predictor is [130, 161]
-the validation for 3th predictor is [75, 58]
+the validation for 1th predictor is [156, 141]
+the validation for 2th predictor is [30, 14]
+the validation for 3th predictor is [34, 27]
 This is the 4th 2-fold cross validation
 n of train dataset is 864
 n of test dataset is 864
 in fold 0 for predictor 0, we have 01Loss=255
-in fold 0 for predictor 1, we have 01Loss=149
-in fold 0 for predictor 2, we have 01Loss=149
-in fold 0 for predictor 3, we have 01Loss=59
+in fold 0 for predictor 1, we have 01Loss=146
+in fold 0 for predictor 2, we have 01Loss=21
+in fold 0 for predictor 3, we have 01Loss=24
 in fold 1 for predictor 0, we have 01Loss=257
-in fold 1 for predictor 1, we have 01Loss=151
-in fold 1 for predictor 2, we have 01Loss=151
-in fold 1 for predictor 3, we have 01Loss=49
+in fold 1 for predictor 1, we have 01Loss=159
+in fold 1 for predictor 2, we have 01Loss=35
+in fold 1 for predictor 3, we have 01Loss=28
 the validation for 0th predictor is [255, 257]
-the validation for 1th predictor is [149, 151]
-the validation for 2th predictor is [149, 151]
-the validation for 3th predictor is [59, 49]
+the validation for 1th predictor is [146, 159]
+the validation for 2th predictor is [21, 35]
+the validation for 3th predictor is [24, 28]
 the final results for predictor 0 is:
 [255, 257, 255, 257, 255, 257, 255, 257, 255, 257]
 the mean is:
 256.0
 the final results for predictor 1 is:
-[154, 128, 154, 145, 149, 141, 130, 161, 149, 151]
+[146, 152, 145, 153, 153, 158, 156, 141, 146, 159]
 the mean is:
-146.2
+150.9
 the final results for predictor 2 is:
-[154, 128, 154, 145, 149, 141, 130, 161, 149, 151]
+[8, 27, 15, 21, 15, 14, 30, 14, 21, 35]
 the mean is:
-146.2
+20.0
 the final results for predictor 3 is:
-[84, 39, 48, 45, 39, 51, 75, 58, 59, 49]
+[36, 45, 30, 33, 36, 29, 34, 27, 24, 28]
 the mean is:
-54.7
+32.2
 
 Process finished with exit code 0

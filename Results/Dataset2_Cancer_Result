@@ -1,41 +1,43 @@
-C:\anaconda\python.exe D:/ML-A3/introML-A3/Dataset5_House.py
-House Dataset
+C:\ProgramData\anaconda3\python.exe "C:\Github Desktop\introML-A3\Dataset2_Cancer.py"
+C:\Github Desktop\introML-A3\DataPreprocessing.py:11: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  df = df.applymap(f)
+Cancer Dataset
 The original dataset is:
-             0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16
-0    republican  n  y  n  y  y  y  n  n  n  y  ?  y  y  y  n  y
-1    republican  n  y  n  y  y  y  n  n  n  n  n  y  y  y  n  ?
-2      democrat  ?  y  y  ?  y  y  n  n  n  n  y  n  y  y  n  n
-3      democrat  n  y  y  n  ?  y  n  n  n  n  y  n  y  n  n  y
-4      democrat  y  y  y  n  y  y  n  n  n  n  y  ?  y  y  y  y
-..          ... .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
-430  republican  n  n  y  y  y  y  n  n  y  y  n  y  y  y  n  y
-431    democrat  n  n  y  n  n  n  y  y  y  y  n  n  n  n  n  y
-432  republican  n  ?  n  y  y  y  n  n  n  n  y  y  y  y  n  y
-433  republican  n  n  n  y  y  y  ?  ?  ?  ?  n  y  y  y  n  y
-434  republican  n  y  n  y  y  y  n  n  n  y  n  y  y  y  ?  n
+     1   2   3   4   5   6   7   8   9   10
+0     5   1   1   1   2   1   3   1   1   2
+1     5   4   4   5   7  10   3   2   1   2
+2     3   1   1   1   2   2   3   1   1   2
+3     6   8   8   1   3   4   3   7   1   2
+4     4   1   1   3   2   1   3   1   1   2
+..   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+694   3   1   1   1   3   2   1   1   1   2
+695   2   1   1   1   2   1   1   1   1   2
+696   5  10  10   3   7   3   8  10   2   4
+697   4   8   6   4   3   4  10   6   1   4
+698   4   8   8   5   4   5  10   4   1   4
 
-[435 rows x 17 columns]
+[699 rows x 10 columns]
 
 
 The processed dataset is:
-     0         1         2         3   ...        13        14        15        16
-0     1 -0.904742  1.051709 -1.224976  ...  1.010112  0.850601 -0.901484  0.716114
-1     1 -0.904742  1.051709 -1.224976  ...  1.010112  0.850601 -0.901484 -0.650156
-2     0  0.114851  1.051709  0.836395  ...  1.010112  0.850601 -0.901484 -2.016426
-3     0 -0.904742  1.051709  0.836395  ...  1.010112 -1.222292 -0.901484  0.716114
-4     0  1.134444  1.051709  0.836395  ...  1.010112  0.850601  1.184397  0.716114
-..   ..       ...       ...       ...  ...       ...       ...       ...       ...
-430   1 -0.904742 -1.066316  0.836395  ...  1.010112  0.850601 -0.901484  0.716114
-431   0 -0.904742 -1.066316  0.836395  ... -1.047962 -1.222292 -0.901484  0.716114
-432   1 -0.904742 -0.007304 -1.224976  ...  1.010112  0.850601 -0.901484  0.716114
-433   1 -0.904742 -1.066316 -1.224976  ...  1.010112  0.850601 -0.901484  0.716114
-434   1 -0.904742  1.051709 -1.224976  ...  1.010112  0.850601  0.141456 -2.016426
+           1         2         3         4   ...        7         8         9   10
+0    0.206788 -0.699494 -0.742767 -0.632794  ... -0.179534 -0.611387 -0.343666   0
+1    0.206788  0.283642  0.266684  0.768071  ... -0.179534 -0.283909 -0.343666   0
+2   -0.503505 -0.699494 -0.742767 -0.632794  ... -0.179534 -0.611387 -0.343666   0
+3    0.561934  1.594490  1.612618 -0.632794  ... -0.179534  1.353485 -0.343666   0
+4   -0.148359 -0.699494 -0.742767  0.067638  ... -0.179534 -0.611387 -0.343666   0
+..        ...       ...       ...       ...  ...       ...       ...       ...  ..
+694 -0.503505 -0.699494 -0.742767 -0.632794  ... -0.999756 -0.611387 -0.343666   0
+695 -0.858651 -0.699494 -0.742767 -0.632794  ... -0.999756 -0.611387 -0.343666   0
+696  0.206788  2.249915  2.285586  0.067638  ...  1.871021  2.335921  0.239398   1
+697 -0.148359  1.594490  0.939651  0.417854  ...  2.691243  1.026006 -0.343666   1
+698 -0.148359  1.594490  1.612618  0.768071  ...  2.691243  0.371049 -0.343666   1
 
-[435 rows x 17 columns]
+[699 rows x 10 columns]
 
 
-the class labels are: [-1.01628825 -0.00926003  0.99776819]
-The input size is 16
+the class labels are: [0 1]
+The input size is 9
 The output size is 4
 The learning rate is 0.01
 The epoch number is 500
@@ -43,109 +45,97 @@ The batch size is 50
 
 
 The hidden size for FNN are 20 and 10
-The hidden size for Autoencoder are 8 and 12
+The hidden size for Autoencoder are 5 and 10
 This is the 0th 2-fold cross validation
-n of train dataset is 218
-n of test dataset is 217
-in fold 0 for predictor 0, we have 01Loss=83
-in fold 0 for predictor 1, we have 01Loss=11
-in fold 0 for predictor 2, we have 01Loss=11
-D:\ML-A3\introML-A3\DataLayers.py:99: RuntimeWarning: overflow encountered in exp
-  self.output = 1 / (1 + np.exp(-input))
-D:\ML-A3\introML-A3\DataPredictors.py:154: RuntimeWarning: overflow encountered in double_scalars
-  epoch_loss += loss
-C:\anaconda\lib\site-packages\numpy\core\fromnumeric.py:86: RuntimeWarning: overflow encountered in reduce
-  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-D:\ML-A3\introML-A3\DataLossers.py:36: RuntimeWarning: overflow encountered in square
-  value = np.sum(np.square(predicted - groundtruth))
-D:\ML-A3\introML-A3\DataLayers.py:55: RuntimeWarning: overflow encountered in matmul
-  input_gradient= W.T @ output_gradient
-D:\ML-A3\introML-A3\DataLayers.py:105: RuntimeWarning: invalid value encountered in multiply
-  input_gradient=self.output * (1-self.output)* output_gradient
-in fold 0 for predictor 3, we have 01Loss=83
-in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=10
-in fold 1 for predictor 2, we have 01Loss=11
-in fold 1 for predictor 3, we have 01Loss=83
-the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [11, 10]
-the validation for 2th predictor is [11, 11]
-the validation for 3th predictor is [83, 83]
-This is the 1th 2-fold cross validation
-n of train dataset is 218
-n of test dataset is 217
-in fold 0 for predictor 0, we have 01Loss=83
-in fold 0 for predictor 1, we have 01Loss=11
-in fold 0 for predictor 2, we have 01Loss=10
-in fold 0 for predictor 3, we have 01Loss=83
-in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=13
-in fold 1 for predictor 2, we have 01Loss=13
-in fold 1 for predictor 3, we have 01Loss=83
-the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [11, 13]
-the validation for 2th predictor is [10, 13]
-the validation for 3th predictor is [83, 83]
-This is the 2th 2-fold cross validation
-n of train dataset is 218
-n of test dataset is 217
-in fold 0 for predictor 0, we have 01Loss=83
-in fold 0 for predictor 1, we have 01Loss=11
-in fold 0 for predictor 2, we have 01Loss=11
-in fold 0 for predictor 3, we have 01Loss=83
-in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=12
-in fold 1 for predictor 2, we have 01Loss=12
-in fold 1 for predictor 3, we have 01Loss=83
-the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [11, 12]
-the validation for 2th predictor is [11, 12]
-the validation for 3th predictor is [83, 83]
-This is the 3th 2-fold cross validation
-n of train dataset is 218
-n of test dataset is 217
-in fold 0 for predictor 0, we have 01Loss=83
-in fold 0 for predictor 1, we have 01Loss=16
-in fold 0 for predictor 2, we have 01Loss=17
-in fold 0 for predictor 3, we have 01Loss=83
-in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=21
-in fold 1 for predictor 2, we have 01Loss=20
-in fold 1 for predictor 3, we have 01Loss=83
-the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [16, 21]
-the validation for 2th predictor is [17, 20]
-the validation for 3th predictor is [83, 83]
-This is the 4th 2-fold cross validation
-n of train dataset is 218
-n of test dataset is 217
-in fold 0 for predictor 0, we have 01Loss=83
+n of train dataset is 350
+n of test dataset is 349
+in fold 0 for predictor 0, we have 01Loss=119
 in fold 0 for predictor 1, we have 01Loss=10
-in fold 0 for predictor 2, we have 01Loss=10
-in fold 0 for predictor 3, we have 01Loss=83
-in fold 1 for predictor 0, we have 01Loss=83
-in fold 1 for predictor 1, we have 01Loss=10
-in fold 1 for predictor 2, we have 01Loss=10
-in fold 1 for predictor 3, we have 01Loss=83
-the validation for 0th predictor is [83, 83]
-the validation for 1th predictor is [10, 10]
-the validation for 2th predictor is [10, 10]
-the validation for 3th predictor is [83, 83]
+in fold 0 for predictor 2, we have 01Loss=13
+in fold 0 for predictor 3, we have 01Loss=13
+in fold 1 for predictor 0, we have 01Loss=120
+in fold 1 for predictor 1, we have 01Loss=18
+in fold 1 for predictor 2, we have 01Loss=19
+in fold 1 for predictor 3, we have 01Loss=20
+the validation for 0th predictor is [119, 120]
+the validation for 1th predictor is [10, 18]
+the validation for 2th predictor is [13, 19]
+the validation for 3th predictor is [13, 20]
+This is the 1th 2-fold cross validation
+n of train dataset is 350
+n of test dataset is 349
+in fold 0 for predictor 0, we have 01Loss=119
+in fold 0 for predictor 1, we have 01Loss=11
+in fold 0 for predictor 2, we have 01Loss=15
+in fold 0 for predictor 3, we have 01Loss=17
+in fold 1 for predictor 0, we have 01Loss=120
+in fold 1 for predictor 1, we have 01Loss=14
+in fold 1 for predictor 2, we have 01Loss=14
+in fold 1 for predictor 3, we have 01Loss=14
+the validation for 0th predictor is [119, 120]
+the validation for 1th predictor is [11, 14]
+the validation for 2th predictor is [15, 14]
+the validation for 3th predictor is [17, 14]
+This is the 2th 2-fold cross validation
+n of train dataset is 350
+n of test dataset is 349
+in fold 0 for predictor 0, we have 01Loss=119
+in fold 0 for predictor 1, we have 01Loss=18
+in fold 0 for predictor 2, we have 01Loss=22
+in fold 0 for predictor 3, we have 01Loss=26
+in fold 1 for predictor 0, we have 01Loss=120
+in fold 1 for predictor 1, we have 01Loss=11
+in fold 1 for predictor 2, we have 01Loss=13
+in fold 1 for predictor 3, we have 01Loss=14
+the validation for 0th predictor is [119, 120]
+the validation for 1th predictor is [18, 11]
+the validation for 2th predictor is [22, 13]
+the validation for 3th predictor is [26, 14]
+This is the 3th 2-fold cross validation
+n of train dataset is 350
+n of test dataset is 349
+in fold 0 for predictor 0, we have 01Loss=119
+in fold 0 for predictor 1, we have 01Loss=15
+in fold 0 for predictor 2, we have 01Loss=19
+in fold 0 for predictor 3, we have 01Loss=22
+in fold 1 for predictor 0, we have 01Loss=120
+in fold 1 for predictor 1, we have 01Loss=16
+in fold 1 for predictor 2, we have 01Loss=15
+in fold 1 for predictor 3, we have 01Loss=11
+the validation for 0th predictor is [119, 120]
+the validation for 1th predictor is [15, 16]
+the validation for 2th predictor is [19, 15]
+the validation for 3th predictor is [22, 11]
+This is the 4th 2-fold cross validation
+n of train dataset is 350
+n of test dataset is 349
+in fold 0 for predictor 0, we have 01Loss=119
+in fold 0 for predictor 1, we have 01Loss=18
+in fold 0 for predictor 2, we have 01Loss=19
+in fold 0 for predictor 3, we have 01Loss=18
+in fold 1 for predictor 0, we have 01Loss=120
+in fold 1 for predictor 1, we have 01Loss=15
+in fold 1 for predictor 2, we have 01Loss=15
+in fold 1 for predictor 3, we have 01Loss=16
+the validation for 0th predictor is [119, 120]
+the validation for 1th predictor is [18, 15]
+the validation for 2th predictor is [19, 15]
+the validation for 3th predictor is [18, 16]
 the final results for predictor 0 is:
-[83, 83, 83, 83, 83, 83, 83, 83, 83, 83]
+[119, 120, 119, 120, 119, 120, 119, 120, 119, 120]
 the mean is:
-83.0
+119.5
 the final results for predictor 1 is:
-[11, 10, 11, 13, 11, 12, 16, 21, 10, 10]
+[10, 18, 11, 14, 18, 11, 15, 16, 18, 15]
 the mean is:
-12.5
+14.6
 the final results for predictor 2 is:
-[11, 11, 10, 13, 11, 12, 17, 20, 10, 10]
+[13, 19, 15, 14, 22, 13, 19, 15, 19, 15]
 the mean is:
-12.5
+16.4
 the final results for predictor 3 is:
-[83, 83, 83, 83, 83, 83, 83, 83, 83, 83]
+[13, 20, 17, 14, 26, 14, 22, 11, 18, 16]
 the mean is:
-83.0
+17.1
 
 Process finished with exit code 0

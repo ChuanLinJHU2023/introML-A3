@@ -1,4 +1,4 @@
-C:\anaconda\python.exe D:/ML-A3/introML-A3/Dataset4_Forestfire.py
+C:\ProgramData\anaconda3\python.exe "C:\Github Desktop\introML-A3\Dataset4_Forestfire.py"
 Forestfire
 The original dataset is:
      X  Y month  day  FFMC    DMC     DC   ISI  temp  RH  wind  rain   area
@@ -42,97 +42,97 @@ The batch size is 50
 
 
 The hidden size for FNN are 30 and 20
-The hidden size for Autoencoder are 4 and 10
+The hidden size for Autoencoder are 5 and 10
 This is the 0th 2-fold cross validation
 n of train dataset is 259
 n of test dataset is 258
 in fold 0 for predictor 0, we have MSE=0.00024477107180020854
-in fold 0 for predictor 1, we have MSE=0.010666408220971615
-in fold 0 for predictor 2, we have MSE=0.04626688137822382
-in fold 0 for predictor 3, we have MSE=0.0008027190995112283
+in fold 0 for predictor 1, we have MSE=0.06665811220780615
+in fold 0 for predictor 2, we have MSE=0.06724080043082109
+in fold 0 for predictor 3, we have MSE=0.004822349054628343
 in fold 1 for predictor 0, we have MSE=0.030351612903225807
-in fold 1 for predictor 1, we have MSE=0.03997377749073972
-in fold 1 for predictor 2, we have MSE=0.046885648017868826
-in fold 1 for predictor 3, we have MSE=0.030575222970192394
+in fold 1 for predictor 1, we have MSE=0.05431899078326176
+in fold 1 for predictor 2, we have MSE=0.06040857953534296
+in fold 1 for predictor 3, we have MSE=0.031798222781361456
 the validation for 0th predictor is [0.00024477107180020854, 0.030351612903225807]
-the validation for 1th predictor is [0.010666408220971615, 0.03997377749073972]
-the validation for 2th predictor is [0.04626688137822382, 0.046885648017868826]
-the validation for 3th predictor is [0.0008027190995112283, 0.030575222970192394]
+the validation for 1th predictor is [0.06665811220780615, 0.05431899078326176]
+the validation for 2th predictor is [0.06724080043082109, 0.06040857953534296]
+the validation for 3th predictor is [0.004822349054628343, 0.031798222781361456]
 This is the 1th 2-fold cross validation
 n of train dataset is 259
 n of test dataset is 258
 in fold 0 for predictor 0, we have MSE=0.00024477107180020854
-in fold 0 for predictor 1, we have MSE=0.02390215641412905
-in fold 0 for predictor 2, we have MSE=0.15993343451196143
-in fold 0 for predictor 3, we have MSE=0.00017069852644227993
+in fold 0 for predictor 1, we have MSE=0.012679573513705855
+in fold 0 for predictor 2, we have MSE=0.038866472471554815
+in fold 0 for predictor 3, we have MSE=0.0014633523460394152
 in fold 1 for predictor 0, we have MSE=0.030351612903225807
-in fold 1 for predictor 1, we have MSE=0.05211952650633796
-in fold 1 for predictor 2, we have MSE=0.04096587873225252
-in fold 1 for predictor 3, we have MSE=0.030283227292398615
+in fold 1 for predictor 1, we have MSE=0.17161322364269843
+in fold 1 for predictor 2, we have MSE=0.039209253562504195
+in fold 1 for predictor 3, we have MSE=0.029693086700388515
 the validation for 0th predictor is [0.00024477107180020854, 0.030351612903225807]
-the validation for 1th predictor is [0.02390215641412905, 0.05211952650633796]
-the validation for 2th predictor is [0.15993343451196143, 0.04096587873225252]
-the validation for 3th predictor is [0.00017069852644227993, 0.030283227292398615]
+the validation for 1th predictor is [0.012679573513705855, 0.17161322364269843]
+the validation for 2th predictor is [0.038866472471554815, 0.039209253562504195]
+the validation for 3th predictor is [0.0014633523460394152, 0.029693086700388515]
 This is the 2th 2-fold cross validation
 n of train dataset is 259
 n of test dataset is 258
 in fold 0 for predictor 0, we have MSE=0.00024477107180020854
-in fold 0 for predictor 1, we have MSE=0.03083353183431647
-in fold 0 for predictor 2, we have MSE=0.028111610110845814
-in fold 0 for predictor 3, we have MSE=0.003421891784824878
+in fold 0 for predictor 1, we have MSE=0.020000540080853012
+in fold 0 for predictor 2, we have MSE=0.08281945702137841
+in fold 0 for predictor 3, we have MSE=0.0039973418140722096
 in fold 1 for predictor 0, we have MSE=0.030351612903225807
-in fold 1 for predictor 1, we have MSE=0.04276893991038762
-in fold 1 for predictor 2, we have MSE=0.04126821906099153
-in fold 1 for predictor 3, we have MSE=0.029934406497401696
+in fold 1 for predictor 1, we have MSE=0.05124046543509402
+in fold 1 for predictor 2, we have MSE=0.07822829010543708
+in fold 1 for predictor 3, we have MSE=0.02963972603897751
 the validation for 0th predictor is [0.00024477107180020854, 0.030351612903225807]
-the validation for 1th predictor is [0.03083353183431647, 0.04276893991038762]
-the validation for 2th predictor is [0.028111610110845814, 0.04126821906099153]
-the validation for 3th predictor is [0.003421891784824878, 0.029934406497401696]
+the validation for 1th predictor is [0.020000540080853012, 0.05124046543509402]
+the validation for 2th predictor is [0.08281945702137841, 0.07822829010543708]
+the validation for 3th predictor is [0.0039973418140722096, 0.02963972603897751]
 This is the 3th 2-fold cross validation
 n of train dataset is 259
 n of test dataset is 258
 in fold 0 for predictor 0, we have MSE=0.00024477107180020854
-in fold 0 for predictor 1, we have MSE=0.023314059223896087
-in fold 0 for predictor 2, we have MSE=0.022430148107414238
-in fold 0 for predictor 3, we have MSE=9.305250659282554e-05
+in fold 0 for predictor 1, we have MSE=0.01925137982631715
+in fold 0 for predictor 2, we have MSE=0.04168563229092544
+in fold 0 for predictor 3, we have MSE=0.0014702094638999526
 in fold 1 for predictor 0, we have MSE=0.030351612903225807
-in fold 1 for predictor 1, we have MSE=0.04231850929533322
-in fold 1 for predictor 2, we have MSE=0.05014195858733052
-in fold 1 for predictor 3, we have MSE=0.03063717316247549
+in fold 1 for predictor 1, we have MSE=0.11030623884312316
+in fold 1 for predictor 2, we have MSE=0.06365541371221145
+in fold 1 for predictor 3, we have MSE=0.029408716735382815
 the validation for 0th predictor is [0.00024477107180020854, 0.030351612903225807]
-the validation for 1th predictor is [0.023314059223896087, 0.04231850929533322]
-the validation for 2th predictor is [0.022430148107414238, 0.05014195858733052]
-the validation for 3th predictor is [9.305250659282554e-05, 0.03063717316247549]
+the validation for 1th predictor is [0.01925137982631715, 0.11030623884312316]
+the validation for 2th predictor is [0.04168563229092544, 0.06365541371221145]
+the validation for 3th predictor is [0.0014702094638999526, 0.029408716735382815]
 This is the 4th 2-fold cross validation
 n of train dataset is 259
 n of test dataset is 258
 in fold 0 for predictor 0, we have MSE=0.00024477107180020854
-in fold 0 for predictor 1, we have MSE=0.04682206250466488
-in fold 0 for predictor 2, we have MSE=0.0424751033683022
-in fold 0 for predictor 3, we have MSE=0.0019097355214043176
+in fold 0 for predictor 1, we have MSE=0.006858587401755647
+in fold 0 for predictor 2, we have MSE=0.0106341114154952
+in fold 0 for predictor 3, we have MSE=6.342775728393923e-05
 in fold 1 for predictor 0, we have MSE=0.030351612903225807
-in fold 1 for predictor 1, we have MSE=0.04457077722994358
-in fold 1 for predictor 2, we have MSE=0.043420004010702916
-in fold 1 for predictor 3, we have MSE=0.0296540853238184
+in fold 1 for predictor 1, we have MSE=0.06121273340373143
+in fold 1 for predictor 2, we have MSE=0.0479141090642283
+in fold 1 for predictor 3, we have MSE=0.030401824721459754
 the validation for 0th predictor is [0.00024477107180020854, 0.030351612903225807]
-the validation for 1th predictor is [0.04682206250466488, 0.04457077722994358]
-the validation for 2th predictor is [0.0424751033683022, 0.043420004010702916]
-the validation for 3th predictor is [0.0019097355214043176, 0.0296540853238184]
+the validation for 1th predictor is [0.006858587401755647, 0.06121273340373143]
+the validation for 2th predictor is [0.0106341114154952, 0.0479141090642283]
+the validation for 3th predictor is [6.342775728393923e-05, 0.030401824721459754]
 the final results for predictor 0 is:
 [0.00024477107180020854, 0.030351612903225807, 0.00024477107180020854, 0.030351612903225807, 0.00024477107180020854, 0.030351612903225807, 0.00024477107180020854, 0.030351612903225807, 0.00024477107180020854, 0.030351612903225807]
 the mean is:
 0.015298191987513008
 the final results for predictor 1 is:
-[0.010666408220971615, 0.03997377749073972, 0.02390215641412905, 0.05211952650633796, 0.03083353183431647, 0.04276893991038762, 0.023314059223896087, 0.04231850929533322, 0.04682206250466488, 0.04457077722994358]
+[0.06665811220780615, 0.05431899078326176, 0.012679573513705855, 0.17161322364269843, 0.020000540080853012, 0.05124046543509402, 0.01925137982631715, 0.11030623884312316, 0.006858587401755647, 0.06121273340373143]
 the mean is:
-0.03572897486307201
+0.05741398451383466
 the final results for predictor 2 is:
-[0.04626688137822382, 0.046885648017868826, 0.15993343451196143, 0.04096587873225252, 0.028111610110845814, 0.04126821906099153, 0.022430148107414238, 0.05014195858733052, 0.0424751033683022, 0.043420004010702916]
+[0.06724080043082109, 0.06040857953534296, 0.038866472471554815, 0.039209253562504195, 0.08281945702137841, 0.07822829010543708, 0.04168563229092544, 0.06365541371221145, 0.0106341114154952, 0.0479141090642283]
 the mean is:
-0.05218988858858938
+0.053066211960989894
 the final results for predictor 3 is:
-[0.0008027190995112283, 0.030575222970192394, 0.00017069852644227993, 0.030283227292398615, 0.003421891784824878, 0.029934406497401696, 9.305250659282554e-05, 0.03063717316247549, 0.0019097355214043176, 0.0296540853238184]
+[0.004822349054628343, 0.031798222781361456, 0.0014633523460394152, 0.029693086700388515, 0.0039973418140722096, 0.02963972603897751, 0.0014702094638999526, 0.029408716735382815, 6.342775728393923e-05, 0.030401824721459754]
 the mean is:
-0.015748221268506214
+0.01627582574134939
 
 Process finished with exit code 0
