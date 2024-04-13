@@ -1,4 +1,5 @@
-import numpy as np
+# DataPredictors.py implements Feedforward Neural Network, Autoencoder Neural Network.
+
 from DataOptimizers import *
 from DataLossers import *
 import pandas as pd

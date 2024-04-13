@@ -1,3 +1,4 @@
+# DataLossers.py implements the MSE loss, the softmax cross-entropy loss, and other losses.
 from DataLayers import *
 
 

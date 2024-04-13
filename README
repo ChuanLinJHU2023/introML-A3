@@ -6,7 +6,6 @@ DataLossers.py implements the MSE loss, the softmax cross-entropy loss, and othe
 DataOptimizers.py implements the gradient descent optimizer.
 DataPredictors.py implements Feedforward Neural Network, Autoencoder Neural Network.
 DataPreprocessing.py implements all kinds of data preprocessing tools, such as imputation.
-DataTools.py implements some tools used by predictors, such as the entropy.
 DataValidators.py implements some validators to test predictors, such as 5*2 cross validator.
 
 Dataset1_abalone.py implements the first experiment, comparing Null model, Feedforward Neural Network, Autoencoder Neural Network on Abalone dataset

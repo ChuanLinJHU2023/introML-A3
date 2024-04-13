@@ -1,6 +1,7 @@
+# DataLayers.py implements the Linear Layer, the Sigmoid Layer, and other layers
 import numpy as np
 from typing import List
-show_forward_propagation_process = True
+show_forward_propagation_process = False
 
 class Layer:
     def __init__(self, input_size, output_size):
@@ -25,6 +26,7 @@ class Layer:
 
     def clear_params(self):
         raise NotImplementedError
+
 
 class Linear(Layer):
     def __init__(self, input_size, output_size, W:np.ndarray = None, b:np.ndarray = None, examplary=False):
@@ -110,6 +112,7 @@ class Sigmoid(Layer):
 
     def clear_params(self):
         pass
+
 
 class Sequential:
     def __init__(self, layers: List[Layer]):

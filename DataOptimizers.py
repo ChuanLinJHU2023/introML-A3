@@ -1,7 +1,8 @@
-import numpy as np
+# DataOptimizers.py implements the gradient descent optimizer.
 from DataLayers import *
-import pandas as pd
 from typing import *
+
+
 class Optimizer:
     def __init__(self, lr):
         self.learning_rate = lr

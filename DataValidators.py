@@ -1,3 +1,5 @@
+# DataValidators.py implements some validators to test predictors, such as 5*2 cross validator.
+
 import numpy as np
 from DataPreprocessing import *
 class KFoldCrossValidator:
