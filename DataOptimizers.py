@@ -4,16 +4,41 @@ from typing import *
 
 
 class Optimizer:
+    """
+    Base class for all optimizers.
+
+    Attributes:
+        - lr (float): The learning rate used by the optimizer.
+        - show_weight_update_process (bool): Whether to show the weight update process during training.
+    """
+
+
     def __init__(self, lr):
         self.learning_rate = lr
         self.show_weight_update_process = False
 
     def step(self, seq: Sequential):
+        """
+        Performs a single optimization step on the given sequence or layer.
+
+        Parameters:
+            seq (Union[Sequential, Layer]): The sequence or layer to perform optimization on.
+
+        """
         raise NotImplementedError
 
 
 class GradientDecsent(Optimizer):
+    """
+    Class implementing the gradient descent optimizer.
+    """
     def step(self, seq_or_lay: Union[Sequential, Layer]):
+        """
+        Performs a single optimization step on the given sequence or layer.
+
+        Args:
+            seq_or_lay (Union[Sequential, Layer]): The sequence or layer to perform optimization on.
+        """
         if isinstance(seq_or_lay, Sequential):
             seq=seq_or_lay
             for layer in seq.layers:
