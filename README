@@ -1,0 +1,18 @@
+Main.pdf is the paper document for this assignment.
+demo.mp4 is the demo for this assignment
+
+DataLayers.py implements the Linear Layer, the Sigmoid Layer, and other layers
+DataLossers.py implements the MSE loss, the softmax cross-entropy loss, and other losses.
+DataOptimizers.py implements the gradient descent optimizer.
+DataPredictors.py implements Feedforward Neural Network, Autoencoder Neural Network.
+DataPreprocessing.py implements all kinds of data preprocessing tools, such as imputation.
+DataTools.py implements some tools used by predictors, such as the entropy.
+DataValidators.py implements some validators to test predictors, such as 5*2 cross validator.
+
+Dataset1_abalone.py implements the first experiment, comparing Null model, Feedforward Neural Network, Autoencoder Neural Network on Abalone dataset
+Example1_SampleOutput.py implements the first example in the demo
+
+Results folder contains the experiment results. For example, Dataset1_abalone_result.txt contains the result of Dataset1_abalone.py.
+Datasets folder contains the datasets, such as abalone.data
+
+The meaning of the remaining files can be inferred.
