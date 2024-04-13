@@ -47,6 +47,19 @@ class Null:
 
 
 class DNN:
+    """
+    Class representing a Deep Neural Network (DNN).
+
+    Attributes:
+        - seq (Sequential): The sequential model representing the architecture of the neural network.
+        - opt (Optimizer): The optimizer used for training the neural network.
+        - loss (Loss): The loss function used for training.
+        - label_feature (str): The name of the feature column representing the labels.
+        - batch_size (int): The size of each training mini batch.
+        - n_epochs (int): The number of training epochs.
+        - clear_after_pred (bool): Whether to clear the parameters of the model after prediction.
+        - show_details (bool): Whether to show training details during the fit process.
+    """
 
     def __init__(self, seq: Sequential, opt: Optimizer, loss: Loss, label_feature, batch_size=None, n_epochs=None,
                  clear_after_pred=False, show_detials=False):
@@ -63,6 +76,14 @@ class DNN:
         self.show_details = show_detials
 
     def fit(self, df_train: pd.DataFrame, batch_size=None, n_epochs=None):
+        """
+        Trains the neural network on the provided training data.
+
+        Args:
+            - df_train (pd.DataFrame): The training data.
+            - batch_size (int): The size of each mini batch.
+            - n_epochs (int): The number of training epochs.
+        """
         batch_size = self.batch_Size if batch_size is None else batch_size
         n_epochs = self.n_epochs if n_epochs is None else n_epochs
         arr_train = np.array(df_train)
@@ -90,6 +111,16 @@ class DNN:
                 print("Epoch {}: Loss {}".format(epoch_i, epoch_loss))
 
     def predict(self, df_test: pd.DataFrame, show_detail=False):
+        """
+        Predicts labels for the provided test data.
+
+        Args:
+            - df_test (pd.DataFrame): The test data.
+            - show_detail (bool): Whether to show prediction details.
+
+        Returns:
+            - np.array: Predicted labels.
+        """
         arr_test = np.array(df_test)
         datapoint_number = arr_test.shape[0]
         xs = np.delete(arr_test, self.label_feature_index, axis=1)
@@ -106,16 +137,50 @@ class DNN:
         return ys
 
     def predict_for_single_data_point(self, dp: pd.Series):
+        """
+        Predicts the label for a single data point.
+
+        Parameters:
+            - dp (pd.Series): The single data point.
+
+        Returns:
+            - float: Predicted label.
+        """
         dp = dp.drop(self.label_feature_index)
         dp = np.array(dp)
         predicted = self.seq.forward(dp, need_reshape=True, need_decode=self.whether_decode)
         return predicted
 
     def get_label_feature(self):
+        """
+        Returns the name of the label feature.
+
+        Returns:
+            - str: Name of the label feature.
+        """
         return self.label_feature
 
 
 class AutoEncoder:
+    """
+    Class representing an Autoencoder neural network.
+    *IMPORTANT* Autoencoder can be regarded as two DNNs which share some hidden layers as the encoder layer.
+    One DNN is called predictor DNN and the other DNN is called autoencoder DNN
+
+
+    Attributes:
+        - seq_enc (Sequential): The sequential model representing the autoencoder DNN
+        - seq (Sequential): The sequential model representing the predictor DNN
+        - opt (Optimizer): The optimizer used for training.
+        - loss_enc (Loss): The loss function used for training the autoencoder DNN.
+        - loss (Loss): The loss function used for training the predictor DNN
+        - label_feature (str): The name of the feature column representing the labels.
+        - batch_size (int): The size of each training mini batch.
+        - n_epochs (int): The number of training epochs.
+        - clear_after_pred (bool): Whether to clear the parameters of the models after prediction.
+        - n_shared_layers (int): The number of shared layers between the predictor DNN and the autoencoder DNN.
+        - show_details (bool): Whether to show training details during the fit process.
+    """
 
     def __init__(self, seq_enc: Sequential, seq: Sequential, opt: Optimizer, loss: Loss, label_feature,
                  batch_size=None, n_epochs=None, clear_after_pred=False, n_shared_layers=2, show_details=False):
